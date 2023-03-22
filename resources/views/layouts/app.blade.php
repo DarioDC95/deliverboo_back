@@ -1,3 +1,4 @@
+{{-- Nav-Bar con Logo, Home, Login, Register  --}}
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
