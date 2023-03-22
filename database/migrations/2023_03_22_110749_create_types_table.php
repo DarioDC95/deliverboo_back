@@ -13,16 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('restaurants', function (Blueprint $table) {
+        Schema::create('types', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')
-                  ->references('id')
-                  ->on('users')
-                  ->cascadeOnDelete();
-            $table->string('name', 100);
-            $table->string('p_iva', 20);
-            $table->text('cover_path');
-            $table->string('address');
+            $table->string('name', 50);
             $table->timestamps();
         });
     }
@@ -34,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('restaurants');
+        Schema::dropIfExists('types');
     }
 };
