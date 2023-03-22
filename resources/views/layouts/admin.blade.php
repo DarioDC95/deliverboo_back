@@ -25,13 +25,13 @@
 <body>
     <div id="app">
 
-        <header class="navbar navbar-expand-md navbar-dark sticky-top bg-dark flex-md-nowrap justify-content-between shadow">
+        <header class="navbar flex-row navbar-expand-md navbar-dark sticky-top bg-dark flex-md-nowrap p-3  shadow">
             <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/">BoolPress</a>
             <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <input class="form-control form-control-dark w-75" type="text" Placeholder="Search">
-            <div class="collapse navbar-collapse">
+            <div class="collapse navbar-collapse d-flex flex-end">
 
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item dropdown">
@@ -40,7 +40,7 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ url('dashboard') }}">{{__('Dashboard')}}</a>
+                            <a class="dropdown-item" href="{{ route('admin.index') }}">Dashboard</a>
                             <a class="dropdown-item" href="{{ url('profile') }}">{{__('Profile')}}</a>
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
