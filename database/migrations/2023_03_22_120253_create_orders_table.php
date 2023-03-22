@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('email_client', 50);
             $table->string('phone_client', 20);
             $table->string('address_client');
-            $table->float('prize', 5, 2);
+            $table->float('total_price', 5, 2);
             $table->boolean('delivered');
             $table->timestamps();
         });
