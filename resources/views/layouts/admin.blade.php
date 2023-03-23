@@ -61,7 +61,7 @@
                     <div class="position-sticky pt-3">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                {{Route::currentRouteName()}}
+                                
                                 <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.index' ? 'bg-secondary' : '' }}" href="{{route('admin.index')}}">
                                     <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Dashboard
                                 </a>
