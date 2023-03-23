@@ -10,21 +10,27 @@
                 @endforeach
             @endif
             <form method="POST" action="{{route('admin.store')}}" enctype="multipart/form-data">
-                @csrf 
+                @csrf
 
+                {{-- * NOME RISTORANTE --}}
                 <div class="form-group my-2">
                     <label class="fs-2 fw-semibold" for="name">Nome Ristorante</label>
                     <input type="text" class="form-control" name="name" id="name" placeholder="Inserire Nome Ristorante">
                 </div>
+
+                {{-- * PARTITA IVA --}}
                 <div class="form-group my-2">
                     <label class="fs-2 fw-semibold" for="p_iva">P.IVA</label>
                     <input type="text" class="form-control" name="p_iva" id="p_iva" placeholder="Inserisci P.IVA">
                 </div>
+
+                {{-- * INDIRIZZO --}}
                 <div class="form-group my-2">
                     <label class="fs-2 fw-semibold" for="address">Indirizzo</label>
                     <input type="text" class="form-control" name="address" id="address" placeholder="Inserisci Indirizzo">
                 </div>
 
+                {{-- * CATEGORIA --}}
                 <div class="form-group my-2">
                     <label class="fs-2 fw-semibold" for="types">Categorie</label>
                     <div>
@@ -34,16 +40,17 @@
                             <label class="form-check-label" for="flexCheckDefault">
                                 {{ $type->name }}
                             </label>
-                        </div>                        
+                        </div>
                         @endforeach
                     </div>
                 </div>
 
+                {{-- * IMMAGINE --}}
                 <div class="mb-3">
                     <label for="cover_path" class="form-label">Cover del ristorante</label>
                     <input class="form-control" type="file"  id="cover_path" name="cover_path">
                 </div>
-                
+
             <button type="submit" class="btn btn-success">Salva</button>
             </form>
         </div>
