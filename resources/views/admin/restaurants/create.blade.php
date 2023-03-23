@@ -9,7 +9,7 @@
                     <div class="alert alert-danger">{{$error}}</div>
                 @endforeach
             @endif
-            <form method="POST" action="{{route('admin.store')}}">
+            <form method="POST" action="{{route('admin.store')}}" enctype="multipart/form-data">
                 @csrf 
 
                 <div class="form-group my-2">
@@ -24,16 +24,27 @@
                     <label class="fs-2 fw-semibold" for="address">Indirizzo</label>
                     <input type="text" class="form-control" name="address" id="address" placeholder="Inserisci Indirizzo">
                 </div>
+
                 <div class="form-group my-2">
                     <label class="fs-2 fw-semibold" for="types">Categorie</label>
-                    <select class="form-control" name="types" id="types">
+                    <div>
                         @foreach ($types as $type)
-                        <option value="{{$type->id}}">
-                            {{$type->name}}
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="{{$type->id}}" id="types" name="types[]">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                {{ $type->name }}
+                            </label>
+                        </div>                        
                         @endforeach
-                    </select>
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-success">Salva</button>
+
+                <div class="mb-3">
+                    <label for="cover_path" class="form-label">Cover del ristorante</label>
+                    <input class="form-control" type="file"  id="cover_path" name="cover_path">
+                </div>
+                
+            <button type="submit" class="btn btn-success">Salva</button>
             </form>
         </div>
     </div>
