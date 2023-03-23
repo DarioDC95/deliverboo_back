@@ -6,6 +6,13 @@
             <h2>Crea il tuo Ristornate</h2>
             <a class="btn btn-success my-3" href="{{ route('admin.restaurants.create') }}">Aggiungi Ristornate</a>
         @else
+        <div>
+            @if(session('message'))
+                <div class="alert alert-success">
+                    {{session('message')}}
+                </div>
+            @endif
+        </div>
             <h2>Ecco il tuo ristorante</h2>
 
             <div class="container mt-5">
