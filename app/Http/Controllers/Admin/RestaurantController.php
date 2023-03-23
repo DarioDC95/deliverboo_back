@@ -70,7 +70,7 @@ class RestaurantController extends Controller
             $newRestaurant->types()->attach($form_data['types']);
         }
 
-        return redirect()->route('admin.index')->with('message', 'Il ristorante è stato creato con successo');
+        return redirect()->route('admin.restaurants.index')->with('message', 'Il ristorante è stato creato con successo');
     }
 
     //! -SHOW-
@@ -94,7 +94,8 @@ class RestaurantController extends Controller
      */
     public function edit(Restaurant $restaurant)
     {
-        //
+        $types = Type::all();
+        return view('admin.restaurants.edit', compact('restaurant', 'types'));
     }
 
     //! -UPDATE-
