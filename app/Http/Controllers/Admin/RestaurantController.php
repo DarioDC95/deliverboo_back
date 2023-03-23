@@ -129,7 +129,7 @@ class RestaurantController extends Controller
                 $restaurant->types()->sync($form_data['types']);
             }
 
-            return redirect()->route('admin.index')->with('message', 'Il ristorante è stato modificato con successo');
+            return redirect()->route('admin.restaurants.index')->with('message', 'Il ristorante è stato modificato con successo');
         } else {
             return redirect()->route('admin.restaurants.index')->with('message', 'Non fare lo sgargiullo');
         }
