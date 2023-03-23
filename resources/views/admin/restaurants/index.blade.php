@@ -22,7 +22,7 @@
                 <h4>{{ $restaurant[0]->address }}</h4>
                 <h4>{{ $restaurant[0]->types[0]->name }}</h4>
                 <img class="img-fluid w-15" src="{{ asset('storage/' . $restaurant[0]->cover_path) }}"
-                alt="Immagine di copertina del ristorante {{ $restaurant[0]->name }}">
+                    alt="Immagine di copertina del ristorante {{ $restaurant[0]->name }}">
 
                 <div class="d-flex align-center">
 
@@ -36,7 +36,8 @@
                     <form action="{{ route('admin.restaurants.destroy', $restaurant[0]->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button class="btn btn-square btn-danger" type="submit" title="Elimina">
+                        <button class="btn btn-square btn-danger confirm-delete-button" type="submit" title="Elimina" data-name="{{$restaurant[0]->name}}" data-bs-toggle="modal"
+                            data-restaurant="{{ $restaurant[0]->id }}">
                             <i class="fas fa-trash"></i>
                         </button>
                     </form>
@@ -44,4 +45,5 @@
             </div>
         @endif
     </div>
+     @include('partials.modal_delete')
 @endsection
