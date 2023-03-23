@@ -9,8 +9,8 @@
                     <div class="alert alert-danger">{{$error}}</div>
                 @endforeach
             @endif
-            <form method="POST" action="{{route('admin.store')}}" enctype="multipart/form-data">
-                @csrf
+            <form method="POST" action="{{route('admin.restaurants.store')}}" enctype="multipart/form-data">
+                @csrf 
 
                 {{-- * NOME RISTORANTE --}}
                 <div class="form-group my-2">

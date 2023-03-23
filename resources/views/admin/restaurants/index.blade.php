@@ -4,7 +4,7 @@
     <div class="container">
         @if ($restaurant->isEmpty())
             <h2>Crea il tuo Ristornate</h2>
-            <a class="btn btn-success my-3" href="{{ route('admin.create') }}">Aggiungi Ristornate</a>
+            <a class="btn btn-success my-3" href="{{ route('admin.restaurants.create') }}">Aggiungi Ristornate</a>
         @else
         <div>
             @if(session('message'))
@@ -25,7 +25,7 @@
                     alt="Immagine di copertina del ristorante {{ $restaurant[0]->name }}">
 
                     {{-- * questa rotta modifica le informazioni --}}
-                    <a class="btn btn-warning btn-square" href="{{route('admin.edit', $restaurant[0]->id)}}"title="Modifica Dettaglio"><i
+                    <a class="btn btn-warning btn-square" href="{{route('admin.restaurants.edit', $restaurant[0]->id)}}"title="Modifica Dettaglio"><i
                         class="fas fa-edit"></i></a>
 
             </div>

@@ -70,7 +70,7 @@ class RestaurantController extends Controller
             $newRestaurant->types()->attach($form_data['types']);
         }
 
-        return redirect()->route('admin.index')->with('message', 'Il ristorante è stato creato con successo');
+        return redirect()->route('admin.restaurants.index')->with('message', 'Il ristorante è stato creato con successo');
     }
 
     //! -SHOW-
@@ -94,7 +94,8 @@ class RestaurantController extends Controller
      */
     public function edit(Restaurant $restaurant)
     {
-        
+        $types = Type::all();
+        return view('admin.restaurants.edit', compact('restaurant', 'types'));
     }
 
     //! -UPDATE-
@@ -107,41 +108,39 @@ class RestaurantController extends Controller
      */
     public function update(UpdateRestaurantRequest $request, Restaurant $restaurant)
     {
-        
+
         $user = Auth::user();
 
         // controlliamo se utente è lo stesso
-        if($user->id == $request->user_id){
+        if ($user->id == $request->user_id) {
             $form_data = $request->validated();
             $form_data['user_id'] = $user->id;
-    
+
             if ($request->has('cover_path')) {
                 Storage::delete($restaurant->cover_path);
             }
 
             $img_cover = Storage::disk('public')->put('cover_path', $request->cover_path);
             $form_data['cover_path'] = $img_cover;
-            
-            $restaurant->update($forma_data);
-        
-            if($request->has('types')){
-                $newRestaurant->types()->sync($form_data['types']);
-            }
-    
-            return redirect()->route('admin.index')->with('message', 'Il ristorante è stato modificato con successo');
-        }
 
-        else{
+            $restaurant->update($form_data);
+
+            if ($request->has('types')) {
+                $restaurant->types()->sync($form_data['types']);
+            }
+
+            return redirect()->route('admin.index')->with('message', 'Il ristorante è stato modificato con successo');
+        } else {
             return redirect()->route('admin.restaurants.index')->with('message', 'Non fare lo sgargiullo');
         }
     }
 
 
-        
 
 
 
-    
+
+
 
     //! -DESTROY-
     /**
