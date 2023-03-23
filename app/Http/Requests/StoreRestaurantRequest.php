@@ -13,7 +13,7 @@ class StoreRestaurantRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,32 @@ class StoreRestaurantRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'user_id' => ['required', 'exists:users,id'],
+            'name' => ['required', 'max:100'],
+            'p_iva' => ['required', 'max:20'],
+            'cover_path' => ['required', 'max:65535'],
+            'address' => ['required', 'max:255']
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array<string, string>
+     */
+    public function messages()
+    {
+        return [
+            'name.required' => 'Il nome è obbligatorio',
+            'name.max' => 'Il nome deve avere al massimo :max caratteri',
+            'user_id.required' => 'l\'user_id è obbligatorio',
+            'user_id.exists' => 'l\'user non è valido',
+            'p_iva.required' => 'la P.Iva è obbligatoria',
+            'p_iva.max' => 'La P.Iva deve avere al massimo :max caratteri',
+            'cover_path.required' => 'l\'immagine è obbligatoria',
+            'cover_path.max' => 'Il path dell\'immagine non è valido',
+            'address.required' => 'L\'indirizzo è obbligatorio',
+            'address.max' => 'L\'indirizzo deve avere al massimo :max caratteri'
         ];
     }
 }

@@ -45,7 +45,19 @@ class RestaurantController extends Controller
      */
     public function store(StoreRestaurantRequest $request)
     {
+        $user = Auth::user();
+
         $form_data = $request->validated();
+
+        $form_data['user_id'] = $user->id;
+
+        $newRestaurant = Restaurant::create($form_data);
+
+        if($request->has('types')) {
+            $newRestaurant->types()->attach($form_data['types']);
+        }
+
+        return redirect()->route('admin.index')->with('message', 'Il ristorante è stato creato con successo');
     }
 
     /**
