@@ -135,13 +135,6 @@ class RestaurantController extends Controller
         }
     }
 
-
-
-
-
-
-
-
     //! -DESTROY-
     /**
      * Remove the specified resource from storage.
@@ -151,6 +144,8 @@ class RestaurantController extends Controller
      */
     public function destroy(Restaurant $restaurant)
     {
-        //
+        //*Canacella i Project
+        $restaurant->delete();
+        return redirect()->route('admin.restaurants.index')->with('message', 'Il Tuo Ristorante è Stato Cancellato Con Successo! Bello.');
     }
 }
