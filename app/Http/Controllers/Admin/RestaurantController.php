@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Storage;
 
 class RestaurantController extends Controller
 {
+    //! -INDEX-
     /**
      * Display a listing of the resource.
      *
@@ -21,15 +22,16 @@ class RestaurantController extends Controller
     public function index()
     {
         $user = Auth::user();
-
+        $types = Type::all();
         $restaurant = Restaurant::where('user_id', $user->id)->get();
 
-
-        return view('admin.restaurants.index', compact('restaurant'));
+        return view('admin.restaurants.index', compact('restaurant', 'types'));
     }
 
+    //! -CREATE-
     /**
      * Show the form for creating a new resource.
+     ** Mostra il form e il metodo per creare un nuovo progetto.
      *
      * @return \Illuminate\Http\Response
      */
@@ -40,6 +42,7 @@ class RestaurantController extends Controller
         return view('admin.restaurants.create', compact('types'));
     }
 
+    //! -STORE-
     /**
      * Store a newly created resource in storage.
      *
@@ -70,6 +73,7 @@ class RestaurantController extends Controller
         return redirect()->route('admin.index')->with('message', 'Il ristorante è stato creato con successo');
     }
 
+    //! -SHOW-
     /**
      * Display the specified resource.
      *
@@ -81,6 +85,7 @@ class RestaurantController extends Controller
         //
     }
 
+    //! -EDIT-
     /**
      * Show the form for editing the specified resource.
      *
@@ -92,6 +97,7 @@ class RestaurantController extends Controller
         //
     }
 
+    //! -UPDATE-
     /**
      * Update the specified resource in storage.
      *
@@ -104,6 +110,7 @@ class RestaurantController extends Controller
         //
     }
 
+    //! -DESTROY-
     /**
      * Remove the specified resource from storage.
      *
