@@ -112,7 +112,7 @@ class RestaurantController extends Controller
         $user = Auth::user();
 
         // controlliamo se utente è lo stesso
-        if ($user->id == $request->user_id) {
+        if ($user->id == $restaurant->user_id) {
             $form_data = $request->validated();
             $form_data['user_id'] = $user->id;
 
