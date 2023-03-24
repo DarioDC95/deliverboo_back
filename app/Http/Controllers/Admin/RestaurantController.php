@@ -117,7 +117,9 @@ class RestaurantController extends Controller
             $form_data['user_id'] = $user->id;
 
             if ($request->has('cover_path')) {
-                Storage::delete($restaurant->cover_path);
+                if ($restaurant->cover_path != null) {
+                    Storage::delete($restaurant->cover_path);
+                }
                 $img_cover = Storage::disk('public')->put('cover_path', $request->cover_path);
                 $form_data['cover_path'] = $img_cover;
             }
