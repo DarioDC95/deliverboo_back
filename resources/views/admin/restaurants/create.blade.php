@@ -12,11 +12,7 @@
             <form method="POST" action="{{route('admin.restaurants.store')}}" enctype="multipart/form-data">
                 @csrf 
 
-                {{-- * NOME RISTORANTE --}}
-                <div class="form-group my-2">
-                    <label class="fs-2 fw-semibold" for="name">Nome Ristorante</label>
-                    <input type="text" class="form-control" name="name" id="name" placeholder="Inserire Nome Ristorante">
-                </div>
+                
 
                 {{-- * PARTITA IVA --}}
                 <div class="form-group my-2">
