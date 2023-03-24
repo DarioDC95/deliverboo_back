@@ -20,7 +20,12 @@
                 <h2>{{ $restaurant[0]->user->name }}</h2>
                 <h4>{{ $restaurant[0]->p_iva }}</h4>
                 <h4>{{ $restaurant[0]->address }}</h4>
-                <h4>{{ $restaurant[0]->types[0]->name }}</h4>
+                <h4>
+                    @foreach ( $restaurant[0]->types as $type )
+                        {{$type['name']}}
+                    @endforeach
+                </h4>
+                
 
                 <div class="d-flex align-items-center ">
                     @if ($restaurant[0]->cover_path != null)
