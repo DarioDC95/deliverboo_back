@@ -71,7 +71,8 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo ') }}</label>
 
                             <div class="col-md-6">
-                                <input id="address" type="text" class="form-control" name="address" value="">
+                                <input id="address" type="text" class="form-control" name="address" value="" required
+                                minlength="4" maxlength="255" >
                             </div>
                         </div>
 
@@ -80,7 +81,8 @@
                             <label for="p_iva" class="col-md-4 col-form-label text-md-right">{{ __('P.IVA ') }}</label>
 
                             <div class="col-md-6">
-                                <input id="p_iva" type="text" class="form-control" name="p_iva" value="">
+                                <input id="p_iva" type="text" class="form-control" name="p_iva" value="" required
+                                minlength="11" maxlength="20" >
                             </div>
                         </div>
 
