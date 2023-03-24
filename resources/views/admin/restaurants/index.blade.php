@@ -21,22 +21,25 @@
                 <h4>{{ $restaurant[0]->p_iva }}</h4>
                 <h4>{{ $restaurant[0]->address }}</h4>
                 <h4>{{ $restaurant[0]->types[0]->name }}</h4>
-                <img class="img-fluid w-15" style="width: 18rem;" src="{{ asset('storage/' . $restaurant[0]->cover_path) }}"
-                    alt="Immagine di copertina del ristorante {{ $restaurant[0]->name }}">
 
-                <div class="d-flex align-center">
+                <div class="d-flex align-items-center ">
+                    <img class="img-fluid w-15" style="width: 18rem;"
+                        src="{{ asset('storage/' . $restaurant[0]->cover_path) }}"
+                        alt="Immagine di copertina del ristorante {{ $restaurant[0]->name }}">
 
-                    {{-- * questa rotta modifica le informazioni --}}
-                    <a class="btn btn-warning btn-square"
-                        href="{{ route('admin.restaurants.edit', $restaurant[0]->id) }}"title="Modifica Dettaglio"><i
-                            class="fas fa-edit"></i></a>
-
+                    <div>
+                        {{-- * questa rotta modifica le informazioni --}}
+                        <a class="btn btn-warning btn-square"
+                            href="{{ route('admin.restaurants.edit', $restaurant[0]->id) }}"title="Modifica Dettaglio"><i
+                                class="fas fa-edit"></i></a>
+                    </div>
                     {{-- * questa rotta elimina il ristorante --}}
 
                     <form action="{{ route('admin.restaurants.destroy', $restaurant[0]->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button class="btn btn-square btn-danger confirm-delete-button" type="submit" title="Elimina" data-name="{{$restaurant[0]->name}}" data-bs-toggle="modal"
+                        <button class="btn btn-square btn-danger confirm-delete-button" type="submit" title="Elimina"
+                            data-name="{{ $restaurant[0]->name }}" data-bs-toggle="modal"
                             data-restaurant="{{ $restaurant[0]->id }}">
                             <i class="fas fa-trash"></i>
                         </button>
@@ -45,5 +48,5 @@
             </div>
         @endif
     </div>
-     @include('partials.modal_delete')
+    @include('partials.modal_delete')
 @endsection
