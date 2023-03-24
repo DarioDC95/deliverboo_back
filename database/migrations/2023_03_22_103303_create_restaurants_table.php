@@ -19,9 +19,9 @@ return new class extends Migration
                   ->references('id')
                   ->on('users')
                   ->cascadeOnDelete();
-            $table->string('name', 100);
             $table->string('p_iva', 20);
-            $table->text('cover_path');
+            $table->text('cover_path')
+                  ->nullable();
             $table->string('address');
             $table->timestamps();
         });
