@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Dish;
+use App\Models\Restaurants;
 use App\Http\Requests\StoreDishRequest;
 use App\Http\Requests\UpdateDishRequest;
+use Illuminate\Support\Facades\Storage;
 
 class DishController extends Controller
 {
@@ -26,7 +28,8 @@ class DishController extends Controller
      */
     public function create()
     {
-        //
+        $dish = Dish::all();
+        return view('admin.restaurants.dishes.create', compact('dish'));
     }
 
     /**
@@ -37,7 +40,34 @@ class DishController extends Controller
      */
     public function store(StoreDishRequest $request)
     {
-        //
+        $form_data = $request->validated();
+        
+        $newDish = New Dish();
+        $newDish->fill($form_data);
+        $newDish->associate(Restaurant::All()->Restaurant->id);
+      
+        
+
+        if ($request->has('image_path')) {
+            $img_cover = Storage::disk('public')->put('image_path', $request->image_path);
+
+            $form_data['image_path'] = $img_cover;
+        }
+
+        if ($newDish->visible == 'false'){
+            $newDish->visible = 0;
+        }
+        else {
+            $newDish->visible = 1;
+        }
+
+        $newDish->save();
+
+        return view('admin.restaurants.index')->with('message','aggiunto piatto');
+
+
+
+      
     }
 
     /**

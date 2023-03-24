@@ -9,6 +9,7 @@ use App\Http\Requests\UpdateRestaurantRequest;
 use App\Models\Type;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Dish;
 
 
 class RestaurantController extends Controller
@@ -23,9 +24,10 @@ class RestaurantController extends Controller
     {
         $user = Auth::user();
         $types = Type::all();
+        $dish = Dish::all(); 
         $restaurant = Restaurant::where('user_id', $user->id)->get();
 
-        return view('admin.restaurants.index', compact('restaurant', 'types'));
+        return view('admin.restaurants.index', compact('restaurant', 'types', 'dish'));
     }
 
     //! -CREATE-
