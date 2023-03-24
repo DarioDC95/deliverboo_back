@@ -83,7 +83,7 @@
                                 <input id="address" type="text" class="form-control" name="address" value="" required
                                 minlength="4" maxlength="255" >
                                 <div id="error-address" class="d-none text-danger">
-                                    Devi inserire un indirizzo
+                                    Devi inserire un Indirizzo
                                 </div>
                             </div>
                         </div>
