@@ -21,7 +21,7 @@
                 <h4>{{ $restaurant[0]->p_iva }}</h4>
                 <h4>{{ $restaurant[0]->address }}</h4>
                 <h4>{{ $restaurant[0]->types[0]->name }}</h4>
-                <img class="img-fluid w-15" src="{{ asset('storage/' . $restaurant[0]->cover_path) }}"
+                <img class="img-fluid w-15" style="width: 18rem;" src="{{ asset('storage/' . $restaurant[0]->cover_path) }}"
                     alt="Immagine di copertina del ristorante {{ $restaurant[0]->name }}">
 
                 <div class="d-flex align-center">
