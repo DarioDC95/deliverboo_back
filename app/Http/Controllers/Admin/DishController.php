@@ -114,6 +114,6 @@ class DishController extends Controller
 
         //*Canacella i Piatto
         $dish->delete();
-        return redirect()->route('admin.restaurants.index')->with('message', 'Il Tuo Piatto è Stato Cancellato Con Successo! Bello.');
+        return redirect()->route('admin.dishes.index')->with('message', 'Il Tuo Piatto è Stato Cancellato Con Successo! Bello.');
     }
 }
