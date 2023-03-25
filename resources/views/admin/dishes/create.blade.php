@@ -43,16 +43,13 @@
             </select>
         </div>
        
-
-        
-
         {{-- * IMMAGINE --}}
         <div class="mb-3">
             <label for="image_path" class="form-label">Immagine del piatto</label>
             <input class="form-control" type="file"  id="image_path" name="image_path">
         </div>
 
-    <button type="submit" class="btn btn-success">Salva</button>
+        <button type="submit" class="btn btn-success">Salva</button>
     </form>
 </div>
 </div>

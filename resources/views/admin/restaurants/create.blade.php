@@ -12,8 +12,6 @@
             <form method="POST" action="{{route('admin.restaurants.store')}}" enctype="multipart/form-data">
                 @csrf 
 
-                
-
                 {{-- * PARTITA IVA --}}
                 <div class="form-group my-2">
                     <label class="fs-2 fw-semibold" for="p_iva">P.IVA</label>

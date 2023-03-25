@@ -22,6 +22,7 @@ class DishController extends Controller
         $user = Auth::user();
         $restaurant = Restaurant::where('user_id',$user->id)->get();
         $dishes = Dish::where('restaurant_id', $restaurant[0]->id)->get();
+        
         return view('admin.dishes.index', compact('dishes'));
     }
 
@@ -32,8 +33,6 @@ class DishController extends Controller
      */
     public function create()
     {
-        
-        
         return view('admin.dishes.create');
     }
 
@@ -49,10 +48,7 @@ class DishController extends Controller
         $user = Auth::user();
         $restaurant = Restaurant::where('user_id',$user->id)->get();
         
-        
-        
         $form_data = $request->validated();
-        
         
         $form_data['restaurant_id'] = $restaurant[0]->id;
         if ($request->has('image_path')) {
@@ -74,11 +70,8 @@ class DishController extends Controller
         $newDish->save();
         
         $dishes = Dish::where('restaurant_id', $restaurant[0]->id)->get();
-        return view('admin.dishes.index', compact('dishes'))->with('message','aggiunto piatto');
-        
 
-
-      
+        return redirect()->route('admin.dishes.index')->with('message','aggiunto piatto');
     }
 
     /**

@@ -8,10 +8,10 @@
                 <div class="col-12">
                     <div class="d-flex justify-content-between">
                         <div>
-                            <h2>Elenco Tipologie</h2>
+                            <h2>Elenco Piatti</h2>
                         </div>
                         <div>
-                            <a href="{{ route('admin.dishes.create') }}" class="btn btn-primary">Aggiungi una nuova Tipologia</a>
+                            <a href="{{ route('admin.dishes.create') }}" class="btn btn-primary">Aggiungi un nuovo Piatto</a>
                         </div>
                     </div>
                 </div>
@@ -36,7 +36,6 @@
                             <th>Descrizione</th>
                             <th>Visibilità</th>
                             <th>Azioni</th>
-                            
                         </thead>
                         <tbody>
                             @forelse ( $dishes as $dish )
@@ -81,7 +80,7 @@
                                 @empty 
                                 <div class="mb-4">
                                     <div class="d-inline-block alert alert-success">
-                                        Non hai nessun progetto, <span class="fw-semibold text-primary text-decoration-underline">clicca su aggiungi Tipologia</span> per iniziare <span class="fw-semibold text-primary text-decoration-underline">o in basso per riempirla di default</span>
+                                        Non hai nessun Piatto Inserito, <span class="fw-semibold text-primary text-decoration-underline">clicca su aggiungi un Nuovo Piatto</span> per iniziare
                                     </div>
                                 </div>
                             @endforelse
