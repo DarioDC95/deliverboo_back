@@ -29,12 +29,14 @@
                 <div class="col-12">
                     <table class="table table-striped">
                         <thead>
+                            <th>Immagine</th>
                             <th>Nome</th>
                             <th>Ingredienti</th>
                             <th>Prezzo</th>
                             <th>Descrizione</th>
                             <th>Visibilità</th>
                             <th>Azioni</th>
+                            
                         </thead>
                         <tbody>
                             @forelse ( $dishes as $dish )
@@ -50,7 +52,7 @@
                                     </td>
                                     <td>{{ $dish['name'] }}</td>
                                     <td>{{ $dish['ingredients'] }}</td>
-                                    <td>{{ $dish['price'] }}</td>
+                                    <td>{{ $dish['price'] }} €</td>
                                     <td>{{ $dish['description'] }}</td>
                                     <td>
                                         @if($dish['visible'])
@@ -60,7 +62,7 @@
                                         @endif
                                     </td>
                                     
-                                    <td class="d-flex">
+                                    <td class="d-flex h-100">
                                         <div>
                                             <a href="{{ route('admin.dishes.show', $dish->id) }}" class="btn btn-primary"><i class="fas fa-eye"></i></a>
                                         </div>
