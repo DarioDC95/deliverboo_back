@@ -24,6 +24,9 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                                 @enderror
+                                <div id="error-name" class="d-none text-danger">
+                                    Devi inserire un Nome
+                                </div>
                             </div>
                         </div>
 
@@ -39,6 +42,9 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                                 @enderror
+                                <div id="error-email" class="d-none text-danger">
+                                    Devi inserire una Email
+                                </div>
                             </div>
                         </div>
 
@@ -63,15 +69,22 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <div id="error-password" class="d-none text-danger">
+                                    Devi inserire due password uguali
+                                </div>
                             </div>
                         </div>
 
                         {{-- indirizzo --}}
                         <div class="mb-4 row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo ') }}</label>
+                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo ') }}</label>
 
                             <div class="col-md-6">
-                                <input id="address" type="text" class="form-control" name="address" value="">
+                                <input id="address" type="text" class="form-control" name="address" value="" required
+                                minlength="4" maxlength="255" >
+                                <div id="error-address" class="d-none text-danger">
+                                    Devi inserire un Indirizzo
+                                </div>
                             </div>
                         </div>
 
@@ -80,7 +93,11 @@
                             <label for="p_iva" class="col-md-4 col-form-label text-md-right">{{ __('P.IVA ') }}</label>
 
                             <div class="col-md-6">
-                                <input id="p_iva" type="text" class="form-control" name="p_iva" value="">
+                                <input id="p_iva" type="text" class="form-control" name="p_iva" value="" required
+                                minlength="11" maxlength="20" >
+                                <div id="error-p_iva" class="d-none text-danger">
+                                    Devi inserire una Partita Iva
+                                </div>
                             </div>
                         </div>
 
@@ -92,17 +109,18 @@
                                 <div>
                                     @foreach ($types as $type)
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="{{$type->id}}" id="types" name="types[]">
+                                        <input class="form-check-input types-checks" type="checkbox" value="{{$type->id}}" name="types[]">
                                         <label class="form-check-label" for="flexCheckDefault">
                                             {{ $type->name }}
                                         </label>
                                     </div>
                                     @endforeach
+                                    <div id="error-types" class="d-none text-danger">
+                                        Non ci sono tipologie selezionate
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
-
 
                         {{-- cover ristorante --}}
                         <div class="mb-4 row">
@@ -113,7 +131,7 @@
                         {{-- bottone  --}}
                         <div class="mb-4 row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" id="register-user-submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
                             </div>

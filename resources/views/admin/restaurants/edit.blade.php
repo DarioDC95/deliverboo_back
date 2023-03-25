@@ -13,10 +13,7 @@
                 @csrf 
                 @method('PUT')
 
-                <div class="form-group my-2">
-                    <label class="fs-2 fw-semibold" for="name">Modifica Nome Ristorante</label>
-                    <input type="text" class="form-control" name="name" id="name" placeholder="Inserire Nome Ristorante" value="{{old('name') ?? $restaurant->name }}">
-                </div>
+                
                 <div class="form-group my-2">
                     <label class="fs-2 fw-semibold" for="p_iva">Modifica P.IVA</label>
                     <input type="text" class="form-control" name="p_iva" id="p_iva" placeholder="Inserisci P.IVA" value="{{old('p_iva') ?? $restaurant->p_iva }}">

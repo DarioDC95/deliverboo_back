@@ -24,12 +24,10 @@ class StoreRestaurantRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required', 'max:100'],
             'p_iva' => ['required', 'max:20'],
-            'cover_path' => ['required', 'max:65535'],
+            'cover_path' => ['nullable', 'max:65535'],
             'address' => ['required', 'max:255'],
             'types' => ['nullable', 'exists:types,id'],
-
         ];
     }
 
@@ -41,8 +39,6 @@ class StoreRestaurantRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'Il nome è obbligatorio',
-            'name.max' => 'Il nome deve avere al massimo :max caratteri',
             'p_iva.required' => 'la P.Iva è obbligatoria',
             'p_iva.max' => 'La P.Iva deve avere al massimo :max caratteri',
             'cover_path.required' => 'l\'immagine è obbligatoria',
@@ -50,7 +46,6 @@ class StoreRestaurantRequest extends FormRequest
             'address.required' => 'L\'indirizzo è obbligatorio',
             'address.max' => 'L\'indirizzo deve avere al massimo :max caratteri',
             'types.exists' => 'Seleziona una tipologia valida',
-
         ];
     }
 }
