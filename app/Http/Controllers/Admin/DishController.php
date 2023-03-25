@@ -22,7 +22,7 @@ class DishController extends Controller
         $user = Auth::user();
         $restaurant = Restaurant::where('user_id',$user->id)->get();
         $dishes = Dish::where('restaurant_id', $restaurant[0]->id)->get();
-        
+
         return view('admin.dishes.index', compact('dishes'));
     }
 
@@ -44,32 +44,22 @@ class DishController extends Controller
      */
     public function store(StoreDishRequest $request)
     {
-
         $user = Auth::user();
         $restaurant = Restaurant::where('user_id',$user->id)->get();
-        
+
         $form_data = $request->validated();
-        
+
         $form_data['restaurant_id'] = $restaurant[0]->id;
         if ($request->has('image_path')) {
             $img_cover = Storage::disk('public')->put('image_path', $request->image_path);
-            
+
             $form_data['image_path'] = $img_cover;
         }
-        
+
         $newDish = New Dish();
         $newDish->fill($form_data);
-        
-        if ($newDish->visible == 'false'){
-            $newDish->visible = 0;
-        }
-        else {
-            $newDish->visible = 1;
-        }
-        
+
         $newDish->save();
-        
-        $dishes = Dish::where('restaurant_id', $restaurant[0]->id)->get();
 
         return redirect()->route('admin.dishes.index')->with('message','aggiunto piatto');
     }
@@ -116,6 +106,12 @@ class DishController extends Controller
      */
     public function destroy(Dish $dish)
     {
-        //
+        if ($dish->image_path != null) {
+            Storage::delete($dish->image_path);
+        }
+
+        //*Canacella i Piatto
+        $dish->delete();
+        return redirect()->route('admin.restaurants.index')->with('message', 'Il Tuo Piatto è Stato Cancellato Con Successo! Bello.');
     }
 }

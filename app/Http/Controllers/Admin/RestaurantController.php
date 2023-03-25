@@ -24,7 +24,7 @@ class RestaurantController extends Controller
     {
         $user = Auth::user();
         $types = Type::all();
-        $dish = Dish::all(); 
+        $dish = Dish::all();
         $restaurant = Restaurant::where('user_id', $user->id)->get();
 
         return view('admin.restaurants.index', compact('restaurant', 'types', 'dish'));
@@ -147,6 +147,9 @@ class RestaurantController extends Controller
      */
     public function destroy(Restaurant $restaurant)
     {
+        if ($restaurant->cover_path != null) {
+            Storage::delete($restaurant->cover_path);
+        }
         //*Canacella i Project
         $restaurant->delete();
         return redirect()->route('admin.restaurants.index')->with('message', 'Il Tuo Ristorante è Stato Cancellato Con Successo! Bello.');

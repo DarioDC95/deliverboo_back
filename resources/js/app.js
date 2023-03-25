@@ -26,7 +26,7 @@ deleteButtons.forEach((button) => {
         bootstrapModal.show();
 
         // DIAMO IL TITOLO DEL COMIC ALLA MODALE
-        const modalTitle = modal.querySelector('#modal-restaurant-name');
+        const modalTitle = modal.querySelector('#modal-name');
         modalTitle.innerText = comicTitle;
 
         // RECUPERO IL PULSANTE PER CANCELLARE
@@ -46,7 +46,7 @@ if (registerButton != null) {
 
     registerButton.addEventListener('click', function(event) {
         event.preventDefault();
-    
+
         // input
         const inputName = document.getElementById('name');
         const inputEmail = document.getElementById('email');
@@ -55,7 +55,7 @@ if (registerButton != null) {
         const inputAddress = document.getElementById('address');
         const inputPiva = document.getElementById('p_iva');
         const inputTypes = document.querySelectorAll('.types-checks:checked');
-    
+
         // errors
         const errorName = document.getElementById('error-name');
         const errorEmail = document.getElementById('error-email');
@@ -63,14 +63,14 @@ if (registerButton != null) {
         const errorAddress = document.getElementById('error-address');
         const errorPiva = document.getElementById('error-p_iva');
         const errorTypes = document.getElementById('error-types');
-    
+
         // condizionali
-        if (inputName.value.trim() != '' 
-            && inputEmail.value.trim() != '' 
-            && inputPassword.value.trim() == inputPasswordConfirm.value.trim() 
-            && inputPassword.value.trim() != '' 
+        if (inputName.value.trim() != ''
+            && inputEmail.value.trim() != ''
+            && inputPassword.value.trim() == inputPasswordConfirm.value.trim()
+            && inputPassword.value.trim() != ''
             && inputPasswordConfirm.value.trim() != ''
-            && inputAddress.value.trim() != '' 
+            && inputAddress.value.trim() != ''
             && inputPiva.value.trim() != '') {
             console.log(inputPassword.value);
             this.parentElement.parentElement.parentElement.submit();
