@@ -1,67 +1,93 @@
 @extends('layouts.admin')
 @section('content')
-	<div class="text-white py-5">
-		<div class="d-flex justify-content-between align-items-center">
-			<h1>PIATTI</h1>
-			<a href="{{route('admin.dishes.create')}}" class="btn btn-success">
-				<i class="fa-solid fa-square-plus fa-lg fa-fw"></i> Aggiungi nuovo piatto
-			</a>
-		</div>
 
-		@if ($dishes->isEmpty())
-		<div class="d-flex align-items-center justify-content-center">
-			<div class="alert border border white text-center m-0" role="alert">
-				nessun piatto, <a href="{{route('admin.dishes.create') }}">clicca qui</a> per aggiungerne uno
-			</div>
-		</div>
-		
-		@else
-			<div class="dishes-table">
-				
-				<div class="t-head grid-container fw-bold py-4 px-3">
-					<div class="grid-item g-col-2">Nome</div>
-					<div class="grid-item g-col-2">Ingredienti</div>
-					<div class="grid-item g-col-2">Prezzo</div>
-					<div class="grid-item g-col-2">Visibilità</div>
-                    <div class="grid-item g-col-2">Disponibilità</div>
-                    <div class="grid-item g-col-2">Descrizione</div>
-				</div>
-
-				
-				<div class="t-body">
-					@foreach ($dishes as $item)	
-						<div class="grid-item t-row grid-container align-items-center py-3 px-3 rounded">
-							<div class="grid-item">{{$item['name']}}</div>
-							<div class="grid-item">{{$item['ingredients']}}</div>
-							<div class="grid-item">{{$item['price']}}</div>
-                            @if($item['visible'])
-                                <div class="grid-item"><i class="fa-solid fa-check" style="color: #008000;"></i></div>
-                            @else
-                                <div class="grid-item"><i class="fa-solid fa-x" style="color: #ff0000;"></i></div>
-                            @endif
-                            @if($item['availability'])
-                                <div class="grid-item"><i class="fa-solid fa-check" style="color: #008000;"></i></div>
-                            @else
-                                <div class="grid-item"><i class="fa-solid fa-x" style="color: #ff0000;"></i></div>
-                            @endif
-                            <div class="grid-item">{{$item['description']}}</div>
-							<div class="grid-item d-flex gap-3">
-								<a href="{{ route('admin.dishes.edit', $item) }}" class="text-white"><i class="fa-solid fa-pen-to-square"></i></a>
-								<a href="{{ route('admin.dishes.show', $item->id) }}" class="text-white"><i class="fa-solid fa-eye"></i></a>
-								 <form class="d-inline-block" action="{{route('admin.dishes.destroy', $item->id)}}" method="POST">
-									@csrf
-									@method('DELETE')
-									<button class="btn btn-sm text-white p-0 confirm-delete" data-title="{{ $item->name }}" data-title="{{ $item->title }}" data-bs-toggle="modal" data-bs-target="#delete-modal" type="submit" title="Cancella dishes">
-										<i class="fa-solid fa-dumpster-fire"></i>
-									</button>
-								</form> 
-							</div>
-						</div>
-					@endforeach
-				</div>
-			</div>
-		@endif
-	</div>
-
-
+<main>
+    <section>
+        <div class="container">
+            <div class="row my-5">
+                <div class="col-12">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h2>Elenco Tipologie</h2>
+                        </div>
+                        <div>
+                            <a href="{{ route('admin.dishes.create') }}" class="btn btn-primary">Aggiungi una nuova Tipologia</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @if (session('message'))
+                <div class="row">
+                    <div class="col-4">
+                        <div class="alert alert-success">
+                            {{ session('message') }}
+                        </div>
+                    </div>
+                </div>
+            @endif
+            <div class="row">
+                <div class="col-12">
+                    <table class="table table-striped">
+                        <thead>
+                            <th>Nome</th>
+                            <th>Ingredienti</th>
+                            <th>Prezzo</th>
+                            <th>Descrizione</th>
+                            <th>Visibilità</th>
+                            <th>Azioni</th>
+                        </thead>
+                        <tbody>
+                            @forelse ( $dishes as $dish )
+                                <tr>
+                                    <td>
+                                        @if ($dish->image_path != null)
+                                        <img class="img-fluid w-15" style="width: 18rem;"
+                                            src="{{ asset('storage/' . $dish->image_path) }}"
+                                            alt="Immagine di copertina del ristorante {{ $dish->name }}">
+                                        @else
+                                        <h2>Immagine non disponibile</h2>
+                                        @endif
+                                    </td>
+                                    <td>{{ $dish['name'] }}</td>
+                                    <td>{{ $dish['ingredients'] }}</td>
+                                    <td>{{ $dish['price'] }}</td>
+                                    <td>{{ $dish['description'] }}</td>
+                                    <td>
+                                        @if($dish['visible'])
+                                        <div class="grid-item"><i class="fa-solid fa-check" style="color: #008000;"></i></div>
+                                        @else
+                                        <div class="grid-item"><i class="fa-solid fa-x" style="color: #ff0000;"></i></div>
+                                        @endif
+                                    </td>
+                                    
+                                    <td class="d-flex">
+                                        <div>
+                                            <a href="{{ route('admin.dishes.show', $dish->id) }}" class="btn btn-primary"><i class="fas fa-eye"></i></a>
+                                        </div>
+                                        <div class="mx-1">
+                                            <a href="{{ route('admin.dishes.edit', $dish->id) }}" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        </div>
+                                        <form action="{{ route('admin.dishes.destroy', $dish->id) }}" method="POST">
+                                        @csrf 
+                                        @method('DELETE')
+                                            <div>
+                                                <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+                                            </div>
+                                        </form>
+                                    </td>
+                                </tr>
+                                @empty 
+                                <div class="mb-4">
+                                    <div class="d-inline-block alert alert-success">
+                                        Non hai nessun progetto, <span class="fw-semibold text-primary text-decoration-underline">clicca su aggiungi Tipologia</span> per iniziare <span class="fw-semibold text-primary text-decoration-underline">o in basso per riempirla di default</span>
+                                    </div>
+                                </div>
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
 @endsection
