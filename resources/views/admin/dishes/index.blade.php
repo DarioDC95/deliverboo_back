@@ -61,20 +61,22 @@
                                         @endif
                                     </td>
                                     
-                                    <td class="d-flex h-100">
-                                        <div>
-                                            <a href="{{ route('admin.dishes.show', $dish->id) }}" class="btn btn-primary"><i class="fas fa-eye"></i></a>
-                                        </div>
-                                        <div class="mx-1">
-                                            <a href="{{ route('admin.dishes.edit', $dish->id) }}" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
-                                        </div>
-                                        <form action="{{ route('admin.dishes.destroy', $dish->id) }}" method="POST">
-                                        @csrf 
-                                        @method('DELETE')
+                                    <td>
+                                        <div class="d-flex">
                                             <div>
-                                                <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+                                                <a href="{{ route('admin.dishes.show', $dish->id) }}" class="btn btn-primary"><i class="fas fa-eye"></i></a>
                                             </div>
-                                        </form>
+                                            <div class="mx-1">
+                                                <a href="{{ route('admin.dishes.edit', $dish->id) }}" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                                            </div>
+                                            <form action="{{ route('admin.dishes.destroy', $dish->id) }}" method="POST">
+                                            @csrf 
+                                            @method('DELETE')
+                                                <div>
+                                                    <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+                                                </div>
+                                            </form>
+                                        </div>
                                     </td>
                                 </tr>
                                 @empty 
