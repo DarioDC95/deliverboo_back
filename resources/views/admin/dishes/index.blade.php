@@ -67,27 +67,25 @@
 
                                         {{-- * VEGANO --}}
                                         <td>
-                                            @if ($dish['vegan'] == null)
-                                                <p>Non è Disponibile</p>
-                                            @elseif ($dish['vegan'] == 0)
-                                                <div class="grid-item"><i class="fa-solid fa-x" style="color: #ff0000;"></i>
-                                                </div>
-                                            @elseif ($dish['vegan'] == 1)
+                                            @if ($dish['vegan'] === null)
+                                                <p>Non è Disponibile</p> 
+                                            @elseif ($dish['vegan'] == true)
                                                 <div class="grid-item"><i class="fa-solid fa-check"
-                                                        style="color: #008000;"></i></div>
+                                                    style="color: #008000;"></i></div>
+                                            @elseif ($dish['vegan'] == false)
+                                                <div class="grid-item"><i class="fa-solid fa-x" style="color: #ff0000;"></i></div>
                                             @endif
                                         </td>
 
                                         {{-- * VEGETARIANO --}}
                                         <td>
-                                            @if ($dish['vegetarian'] == null)
+                                            @if ($dish['vegetarian'] === null)
                                                 <p>Non è Disponibile</p>
-                                            @elseif ($dish['vegetarian'] == 0)
-                                                <div class="grid-item"><i class="fa-solid fa-x" style="color: #ff0000;"></i>
-                                                </div>
-                                            @elseif ($dish['vegetarian'] == 1)
+                                            @elseif ($dish['vegetarian'] == true)
                                                 <div class="grid-item"><i class="fa-solid fa-check"
                                                         style="color: #008000;"></i></div>
+                                            @elseif ($dish['vegetarian'] == false)
+                                                <div class="grid-item"><i class="fa-solid fa-x" style="color: #ff0000;"></i></div>
                                             @endif
                                         </td>
 
