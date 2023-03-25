@@ -20,9 +20,9 @@ class DishController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $restaurant = Restaurant::where('user_id', $user->id)->get();
-
-        return view('admin.dishes.create', compact('dish','restaurant'));
+        $dishes = Dish::where('user_id', $user->id)->get();
+        
+        return view('admin.dishes.create', compact('dishes'));
     }
 
     /**
@@ -32,9 +32,11 @@ class DishController extends Controller
      */
     public function create()
     {
-        $dish = Dish::all();
-        $restaurant = Restaurant::all();
-        return view('admin.dishes.create', compact('dish','restaurant'));
+        $user = Auth::user();
+        $restaurant = Restaurant::where('user_id',$user->id)->get();
+        $dishes = Dish::where('restaurant_id', $restaurant[0]->id)->get();
+        
+        return view('admin.dishes.create', compact('dishes'));
     }
 
     /**
@@ -45,8 +47,15 @@ class DishController extends Controller
      */
     public function store(StoreDishRequest $request)
     {
-        $restaurant = Restaurant::all();
+
+        $user = Auth::user();
+        $restaurant = Restaurant::where('user_id',$user->id)->get();
+        $dishes = Dish::where('restaurant_id', $restaurant[0]->id)->get();
+
+
+        
         $form_data = $request->validated();
+
         
         $form_data['restaurant_id'] = $restaurant[0]->id;
         $newDish = New Dish();
@@ -70,7 +79,7 @@ class DishController extends Controller
 
         $newDish->save();
 
-        return view('admin.dishes.index')->with('message','aggiunto piatto');
+        return view('admin.dishes.index', compact('dishes'))->with('message','aggiunto piatto');
 
 
 
