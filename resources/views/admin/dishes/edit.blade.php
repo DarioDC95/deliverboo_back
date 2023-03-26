@@ -41,8 +41,8 @@
             <div class="col-5">
                 <label class="control-label my-2 fw-bold">Visibile</label>
                 <select class="form-control" name="visible" id="visible">
-                    <option value="0" >NO</option>
-                    <option value="1" selected>SI</option>
+                    <option value="0" {{old('visible') === 0 ? "selected" : "" }}>NO</option>
+                    <option value="1" {{old('visible') === 1 ? "selected" : "" }}>SI</option>
                 </select>
             </div>
 
@@ -51,8 +51,8 @@
                 <label class="control-label my-2 fw-bold">Vegano</label>
                 <select class="form-control" name="vegan" id="visible">
                     <option value="" disable selected>Inserisci un opzione</option>
-                    <option value="0">NO</option>
-                    <option value="1">SI</option>
+                    <option value="0"  {{old('visible') === 0 ? "selected" : "" }}>NO</option>
+                    <option value="1" {{old('visible') === 1 ? "selected" : "" }}>SI</option>
                 </select>
             </div>
 
@@ -68,7 +68,7 @@
 
             {{-- * IMMAGINE --}}
             <div class="mb-3">
-                <label for="image_path" class="form-label">Immagine del piatto</label>
+                <label for="image_path" class="form-label my-2 fw-bold">Immagine del piatto</label>
                 <input class="form-control" type="file" id="image_path" name="image_path">
             </div>
 

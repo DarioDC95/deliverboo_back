@@ -117,7 +117,7 @@ class DishController extends Controller
         
         $dish->update($form_data);
 
-        return redirect()->route('admin.dishes.index')->with('message','Piatto modificato');
+        return redirect()->route('admin.dishes.index')->with('message','Piatto aggiornato');
     }
 
     /**

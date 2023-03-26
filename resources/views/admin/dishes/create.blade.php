@@ -66,7 +66,7 @@
 
             {{-- * IMMAGINE --}}
             <div class="mb-3">
-                <label for="image_path" class="form-label">Immagine del piatto</label>
+                <label for="image_path" class="form-label my-2 fw-bold">Immagine del piatto</label>
                 <input class="form-control" type="file" id="image_path" name="image_path">
             </div>
 
