@@ -13,7 +13,7 @@ class UpdateDishRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,29 @@ class UpdateDishRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => ['required', 'max:50'],
+            'description' => ['nullable', 'max:65535'],
+            'ingredients' => ['required', 'max:65535'],
+            'image_path' => ['required', 'max:65535'],
+            'price' => ['required','between:0,99.99', 'decimal:0,2'],
+            'visible' => ['required', 'boolean'],
+            'vegetarian' => ['nullable', 'boolean'],
+            'vegan' => ['nullable', 'boolean'],
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'Il nome è obbligatorio',
+            'name.max' => 'Il nome deve avere al massimo :max caratteri',
+            'ingredients.required' => 'Gli ingredienti sono obbligatori',
+            'image_path.required' => 'l\'immagine è obbligatoria',
+            'image_path.max' => 'Il path dell\'immagine non è valido',
+            'price.required' => 'Il prezzo è obbligatorio',
+            'price.decimal' => 'Il prezzo deve avere al massimo :decimal numeri',
+            'visible.required' => 'Visibilità richiesta',
+
         ];
     }
 }
