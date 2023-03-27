@@ -67,12 +67,16 @@
             </div>
 
             {{-- * IMMAGINE --}}
+            <div class="my-2">
+                <img class="img-fluid w-15" style="width: 18rem;" src="{{ asset('storage/' . $dish->image_path) }}" alt="Immagine di copertina del ristorante {{ $dish->name }}"><br>
+                <em>Immaggine attuale</em>
+            </div>
             <div class="mb-3">
                 <label for="image_path" class="form-label my-2 fw-bold">Immagine del piatto</label>
                 <input class="form-control" type="file" id="image_path" name="image_path">
             </div>
 
-            <button type="submit" class="btn btn-success">Salva</button>
+            <button type="submit" class="btn btn-success mb-5">Salva</button>
         </form>
     </div>
 @endsection
