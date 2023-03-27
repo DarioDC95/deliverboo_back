@@ -9,7 +9,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+                    <form method="POST" class="myform" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
 
                         {{-- nome ristorante  --}}
@@ -104,24 +104,34 @@
                         {{-- * CATEGORIA --}}
                         <div class="mb-4 row">
 
-                            <div class="form-group my-2">
-                                <label class="fs-2 fw-semibold" for="types">Categorie</label>
-                                <div>
-                                    @foreach ($types as $type)
-                                    <div class="form-check">
-                                        <input class="form-check-input types-checks" type="checkbox" value="{{$type->id}}" name="types[]">
-                                        <label class="form-check-label" for="flexCheckDefault">
-                                            {{ $type->name }}
-                                        </label>
+                            <label for="types" class="col-md-4 col-form-label text-md-right">{{ __('Tipologia') }}</label>
+
+                            <div class="col-md-6">
+
+                                <div class="container-select">
+                                    <div class="select-btn">
+                                        <div class="btn-text">Seleziona Tipologia</div>
+                                        <div class="arrow-dwn">
+                                            <i class="fa-solid fa-chevron-down"></i>
+                                        </div>
                                     </div>
-                                    @endforeach
-                                    <div id="error-types" class="d-none text-danger">
-                                        Non ci sono tipologie selezionate
-                                    </div>
+                        
+                                    <ul class="list-items">
+                                        @foreach ($types as $type)
+                                        <li class="item">
+                                            <input type="checkbox" class="input-checkbox types-checks" value="{{$type->id}}" name="types[]">
+                                            <div class="checkbox">
+                                                <i class="fa-solid fa-check check-icon"></i>
+                                            </div>
+                                            <div class="item-text">{{ $type->name }}</div>
+                                        </li>
+                                        @endforeach
+                                    </ul>
                                 </div>
+                                <div id="error-message" style="display: none; color: red;" class="help-block error-help-block">Seleziona almeno una Tipologia</div>
                             </div>
                         </div>
-
+                        
                         {{-- cover ristorante --}}
                         <div class="mb-4 row">
                             <label for="cover_path" class="form-label">Cover del ristorante</label>
@@ -142,4 +152,13 @@
         </div>
     </div>
 </div>
+
+<!-- Javascript Requirements -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+<!-- Laravel Javascript Validation -->
+<script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
+
+{!! JsValidator::formRequest('App\Http\Requests\StoreUserRequest') !!}
 @endsection
