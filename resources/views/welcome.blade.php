@@ -8,8 +8,8 @@
             <h2 class="">Diventa un partner di Deliveboo </h2>
             <p class="fs-5">Insieme possiamo aiutarti a raggiungere sempre più clienti</p>
         </div>
-        <div class="col-3">
-            <a  class="btn btn-square btn-info position-absolute top-50 start-50 translate-middle text-white" href="{{ route('register') }}">
+        <div class="col-12 text-center">
+            <a  class="btn btn-square btn-info  text-white" href="{{ route('register') }}">
                 Crea un Account
             </a>
         </div>
