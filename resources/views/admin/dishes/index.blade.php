@@ -10,8 +10,11 @@
                                 <h2>Elenco Piatti</h2>
                                 <img class="ms-2" style="width:3rem" src="{{Vite::asset('resources/img/menu.png')}}" alt="">
                             </div>
-                            <div>
+                            <div class="d-none d-md-block">
                                 <a href="{{ route('admin.dishes.create') }}" class="btn btn-primary">Aggiungi un Piatto</a>
+                            </div>
+                            <div class="d-sm-block d-md-none ">
+                                <a href="{{ route('admin.dishes.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i></a>
                             </div>
                         </div>
                     </div>
@@ -125,7 +128,7 @@
                                     <div class="mb-4">
                                         <div class="d-inline-block alert alert-success">
                                             Non hai nessun Piatto Inserito, clicca su
-                                                aggiungi un Nuovo Piatto</span> per iniziare
+                                                aggiungi un Nuovo Piatto per iniziare
                                         </div>
                                     </div>
                                 @endforelse
