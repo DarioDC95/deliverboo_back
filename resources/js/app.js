@@ -66,17 +66,20 @@ if(selectBtn != null) {
 }
 
 // CONTROLLO FORM SUBMIT
-document.querySelector('form.myform').addEventListener('submit', function (event) {
-    const inputTypes = document.querySelectorAll('.types-checks:checked');
-    let errorMessage = document.getElementById('error-message');
-    
-    if (inputTypes.length == 0) {
-        errorMessage.style.display = 'block';
-        event.preventDefault();
-    } else {
-        errorMessage.style.display = 'none';
-    }
-});
+if (document.querySelector('form.myform') != null) {
+
+    document.querySelector('form.myform').addEventListener('submit', function (event) {
+        const inputTypes = document.querySelectorAll('.types-checks:checked');
+        let errorMessage = document.getElementById('error-message');
+        
+        if (inputTypes.length == 0) {
+            errorMessage.style.display = 'block';
+            event.preventDefault();
+        } else {
+            errorMessage.style.display = 'none';
+        }
+    });
+}
 
 // CONTROLLO PASSWORD UGUALI
 // const registerButton = document.getElementById('register-user-submit');
