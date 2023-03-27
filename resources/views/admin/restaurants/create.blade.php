@@ -25,19 +25,6 @@
                 </div>
 
                 {{-- * CATEGORIA --}}
-                {{-- <div class="form-group my-2">
-                    <label class="fs-2 fw-semibold" for="types">Categorie</label>
-                    <div>
-                        @foreach ($types as $type)
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="{{$type->id}}" id="types" name="types[]">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                {{ $type->name }}
-                            </label>
-                        </div>
-                        @endforeach
-                    </div>
-                </div> --}}
                 <div class="form-group my-2">
 
                     <label for="types" class="fs-2 fw-semibold">{{ __('Tipologia ') }}</label>

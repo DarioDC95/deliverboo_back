@@ -102,25 +102,6 @@
                         </div>
 
                         {{-- * CATEGORIA --}}
-                        {{-- <div class="mb-4 row">
-
-                            <div class="form-group my-2">
-                                <label class="fs-2 fw-semibold" for="types">Categorie</label>
-                                <div>
-                                    @foreach ($types as $type)
-                                    <div class="form-check">
-                                        <input class="form-check-input types-checks" type="checkbox" value="{{$type->id}}" name="types[]">
-                                        <label class="form-check-label" for="flexCheckDefault">
-                                            {{ $type->name }}
-                                        </label>
-                                    </div>
-                                    @endforeach
-                                    <div id="error-types" class="d-none text-danger">
-                                        Non ci sono tipologie selezionate
-                                    </div>
-                                </div>
-                            </div>
-                        </div> --}}
                         <div class="mb-4 row">
 
                             <label for="types" class="col-md-4 col-form-label text-md-right">{{ __('Tipologia') }}</label>

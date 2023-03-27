@@ -23,21 +23,6 @@
                     <input type="text" class="form-control" name="address" id="address" placeholder="Inserisci Indirizzo" value="{{old('address') ?? $restaurant->address }}">
                 </div>
 
-                {{-- <div class="form-group my-2">
-                    <label class="fs-2 fw-semibold" for="types">Modifica Categorie</label>
-                    <div>
-                        @foreach ($types as $type)
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="{{$type->id}}" id="types" name="types[]"
-                            {{ $restaurant->types->contains($type) ? 'checked' : '' }}>
-                            <label class="form-check-label" for="flexCheckDefault">
-                                {{ $type->name }}
-                            </label>
-                        </div>                        
-                        @endforeach
-                    </div>
-                </div> --}}
-
                 <div class="form-group my-2">
 
                     <label for="types" class="fs-2 fw-semibold">{{ __('Tipologia ') }}</label>
