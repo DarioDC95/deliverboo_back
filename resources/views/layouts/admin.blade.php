@@ -37,7 +37,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             {{-- <input class="form-control form-control-dark w-50" type="text" Placeholder="Search"> --}}
-            <div class="collapse navbar-collapse justify-content-lg-end show">
+            <div class="collapse navbar-collapse justify-content-md-end ms-3 show">
 
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item dropdown">
