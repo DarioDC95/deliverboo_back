@@ -66,7 +66,7 @@ if(selectBtn != null) {
 }
 
 // CONTROLLO FORM SUBMIT
-document.querySelector('form').addEventListener('submit', function (event) {
+document.querySelector('form.myform').addEventListener('submit', function (event) {
     const inputTypes = document.querySelectorAll('.types-checks:checked');
     let errorMessage = document.getElementById('error-message');
     
