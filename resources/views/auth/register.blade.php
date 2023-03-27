@@ -123,13 +123,13 @@
                         </div> --}}
                         <div class="mb-4 row">
 
-                            <label for="p_iva" class="col-md-4 col-form-label text-md-right">{{ __('P.IVA ') }}</label>
+                            <label for="types" class="col-md-4 col-form-label text-md-right">{{ __('Tipologia') }}</label>
 
                             <div class="col-md-6">
 
                                 <div class="container-select">
                                     <div class="select-btn">
-                                        <div class="btn-text">Select Language</div>
+                                        <div class="btn-text">Seleziona Tipologia</div>
                                         <div class="arrow-dwn">
                                             <i class="fa-solid fa-chevron-down"></i>
                                         </div>

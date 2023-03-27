@@ -40,13 +40,13 @@
 
                 <div class="form-group my-2">
 
-                    <label for="p_iva" class="fs-2 fw-semibold">{{ __('P.IVA ') }}</label>
+                    <label for="types" class="fs-2 fw-semibold">{{ __('Tipologia ') }}</label>
 
                     <div>
 
                         <div class="container-select">
                             <div class="select-btn">
-                                <div class="btn-text">Select Language</div>
+                                <div class="btn-text">Seleziona Tipologia</div>
                                 <div class="arrow-dwn">
                                     <i class="fa-solid fa-chevron-down"></i>
                                 </div>
