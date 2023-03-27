@@ -12,8 +12,10 @@ use Illuminate\Support\Facades\Auth;
 
 class DishController extends Controller
 {
+    //! -INDEX-
     /**
      * Display a listing of the resource.
+     ** Mostra l'elenco dei progetti.
      *
      * @return \Illuminate\Http\Response
      */
@@ -28,8 +30,10 @@ class DishController extends Controller
         return view('admin.dishes.index', compact('dishes'));
     }
 
+    //! -CREATE-
     /**
      * Show the form for creating a new resource.
+     ** Mostra il form e il metodo per creare un nuovo progetto.
      *
      * @return \Illuminate\Http\Response
      */
@@ -38,8 +42,10 @@ class DishController extends Controller
         return view('admin.dishes.create');
     }
 
+    //! -STORE-
     /**
      * Store a newly created resource in storage.
+     ** Salva il nuovo progetto nel Database.
      *
      * @param  \App\Http\Requests\StoreDishRequest  $request
      * @return \Illuminate\Http\Response
@@ -66,19 +72,23 @@ class DishController extends Controller
         return redirect()->route('admin.dishes.index')->with('message','aggiunto piatto');
     }
 
+    //! -SHOW-
     /**
      * Display the specified resource.
+     ** Visualizza la risorsa specificata.
      *
      * @param  \App\Models\Dish  $dish
      * @return \Illuminate\Http\Response
      */
     public function show(Dish $dish)
     {
-        //
+        return view('admin.dishes.show', compact('dish'));
     }
 
+    //! -EDIT-
     /**
      * Show the form for editing the specified resource.
+     ** Vsualizza il modulo per la modifica della risorsa specificata.
      *
      * @param  \App\Models\Dish  $dish
      * @return \Illuminate\Http\Response
@@ -88,8 +98,10 @@ class DishController extends Controller
         return view('admin.dishes.edit', compact('dish'));
     }
 
+    //! -UPDATE-
     /**
      * Update the specified resource in storage.
+     ** Aggiorna la risorsa specificata nell'archiviazione.
      *
      * @param  \App\Http\Requests\UpdateDishRequest  $request
      * @param  \App\Models\Dish  $dish
@@ -97,7 +109,7 @@ class DishController extends Controller
      */
     public function update(UpdateDishRequest $request, Dish $dish)
     {
-        
+
         $user = Auth::user();
         $restaurant = Restaurant::where('user_id',$user->id)->get();
 
@@ -114,14 +126,16 @@ class DishController extends Controller
 
         // dd($form_data);
 
-        
+
         $dish->update($form_data);
 
         return redirect()->route('admin.dishes.index')->with('message','Piatto aggiornato');
     }
 
+    //! -DESTROY-
     /**
      * Remove the specified resource from storage.
+     ** Rimuove una risorsa specifica dallo storage.
      *
      * @param  \App\Models\Dish  $dish
      * @return \Illuminate\Http\Response
