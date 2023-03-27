@@ -11,8 +11,7 @@
                                 <img class="ms-2" style="width:3rem" src="{{Vite::asset('resources/img/menu.png')}}" alt="">
                             </div>
                             <div>
-                                <a href="{{ route('admin.dishes.create') }}" class="btn btn-primary">Aggiungi un nuovo
-                                    Piatto</a>
+                                <a href="{{ route('admin.dishes.create') }}" class="btn btn-primary">Aggiungi un Piatto</a>
                             </div>
                         </div>
                     </div>
@@ -27,8 +26,8 @@
                     </div>
                 @endif
                 <div class="row">
-                    <div class="col-12">
-                        <table class="table table-striped">
+                    <div class="col-12 table-responsive">
+                        <table class="table table-striped  table-hover">
                             <thead>
                                 <th>Immagine</th>
                                 <th>Nome</th>
@@ -96,7 +95,7 @@
                                                 {{-- * questa rotta visualizza il dettaglio del progetto --}}
                                                 <div>
                                                     <a href="{{ route('admin.dishes.show', $dish->id) }}"
-                                                        class="btn btn-primary"><i class="fas fa-eye"></i></a>
+                                                        class="btn btn-primary text-black"><i class="fas fa-eye"></i></a>
                                                 </div>
 
                                                 {{-- * Questa rotta modifica il piatto --}}
@@ -112,7 +111,7 @@
                                                     @csrf
                                                     @method('DELETE')
 
-                                                    <button class="btn btn-square btn-danger confirm-delete-button"
+                                                    <button class="btn btn-square btn-danger confirm-delete-button text-black"
                                                         type="submit" title="Elimina" data-name="{{ $dish->name }}"
                                                         data-bs-toggle="modal">
                                                         <i class="fas fa-trash"></i>
