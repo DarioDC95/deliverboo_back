@@ -44,9 +44,9 @@
                                     <tr>
                                         <td>
                                             @if ($dish->image_path != null)
-                                                <img class="img-fluid w-15" style="width: 18rem;"
+                                                <img class="img-fluid " style="width: 10rem;"
                                                     src="{{ asset('storage/' . $dish->image_path) }}"
-                                                    alt="Immagine di copertina del ristorante {{ $dish->name }}">
+                                                    alt="Immagine di copertina del piatto {{ $dish->name }}">
                                             @else
                                                 <h2>Immagine non disponibile</h2>
                                             @endif
