@@ -7,13 +7,12 @@ use App\Models\Restaurant;
 use App\Models\Type;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
+use App\Http\Requests\StoreUserRequest;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 
 class RegisteredUserController extends Controller
@@ -33,17 +32,9 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request): RedirectResponse
+    public function store(StoreUserRequest $request): RedirectResponse
     {
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'p_iva' => ['required', 'max:20'],
-            'cover_path' => ['nullable', 'max:65535'],
-            'address' => ['required', 'max:255'],
-            'types' => ['required', 'exists:types,id']
-        ]);
+        $request->validated();
 
         $user = User::create([
             'name' => $request->name,

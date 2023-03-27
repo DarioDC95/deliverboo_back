@@ -102,7 +102,7 @@
                         </div>
 
                         {{-- * CATEGORIA --}}
-                        <div class="mb-4 row">
+                        {{-- <div class="mb-4 row">
 
                             <div class="form-group my-2">
                                 <label class="fs-2 fw-semibold" for="types">Categorie</label>
@@ -120,7 +120,30 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
+                        {{-- <div class="container-select">
+                            <div class="select-btn">
+                                <span class="btn-text">Select Language</span>
+                                <span class="arrow-dwn">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </span>
+                            </div>
+                
+                            <ul class="list-items">
+                                @foreach ($types as $type)
+                                <li class="item">
+                                    <input type="checkbox" class="input-checkbox" value="{{$type->id}}" name="types[]">
+                                    <span class="checkbox">
+                                        <i class="fa-solid fa-check check-icon"></i>
+                                    </span>
+                                    <span class="item-text">{{ $type->name }}</span>
+                                </li>
+                                @endforeach
+                                <div id="error-types" class="d-none text-danger">
+                                    Non ci sono tipologie selezionate
+                                </div>
+                            </ul>
+                        </div> --}}
 
                         {{-- cover ristorante --}}
                         <div class="mb-4 row">
@@ -142,4 +165,13 @@
         </div>
     </div>
 </div>
+
+<!-- Javascript Requirements -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+<!-- Laravel Javascript Validation -->
+<script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
+
+{!! JsValidator::formRequest('App\Http\Requests\StoreUserRequest') !!}
 @endsection

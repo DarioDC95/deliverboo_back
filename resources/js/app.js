@@ -40,82 +40,82 @@ deleteButtons.forEach((button) => {
 });
 
 // CONTROLLO PASSWORD UGUALI
-const registerButton = document.getElementById('register-user-submit');
+// const registerButton = document.getElementById('register-user-submit');
 
-if (registerButton != null) {
+// if (registerButton != null) {
 
-    registerButton.addEventListener('click', function(event) {
-        event.preventDefault();
+//     registerButton.addEventListener('click', function(event) {
+//         event.preventDefault();
 
-        // input
-        const inputName = document.getElementById('name');
-        const inputEmail = document.getElementById('email');
-        const inputPassword = document.getElementById('password');
-        const inputPasswordConfirm = document.getElementById('password-confirm');
-        const inputAddress = document.getElementById('address');
-        const inputPiva = document.getElementById('p_iva');
-        const inputTypes = document.querySelectorAll('.types-checks:checked');
+//         // input
+//         const inputName = document.getElementById('name');
+//         const inputEmail = document.getElementById('email');
+//         const inputPassword = document.getElementById('password');
+//         const inputPasswordConfirm = document.getElementById('password-confirm');
+//         const inputAddress = document.getElementById('address');
+//         const inputPiva = document.getElementById('p_iva');
+//         const inputTypes = document.querySelectorAll('.types-checks:checked');
 
-        // errors
-        const errorName = document.getElementById('error-name');
-        const errorEmail = document.getElementById('error-email');
-        const errorPassword = document.getElementById('error-password');
-        const errorAddress = document.getElementById('error-address');
-        const errorPiva = document.getElementById('error-p_iva');
-        const errorTypes = document.getElementById('error-types');
+//         // errors
+//         const errorName = document.getElementById('error-name');
+//         const errorEmail = document.getElementById('error-email');
+//         const errorPassword = document.getElementById('error-password');
+//         const errorAddress = document.getElementById('error-address');
+//         const errorPiva = document.getElementById('error-p_iva');
+//         const errorTypes = document.getElementById('error-types');
 
-        // condizionali
-        if (inputName.value.trim() != ''
-            && inputEmail.value.trim() != ''
-            && inputPassword.value.trim() == inputPasswordConfirm.value.trim()
-            && inputPassword.value.trim() != ''
-            && inputPasswordConfirm.value.trim() != ''
-            && inputAddress.value.trim() != ''
-            && inputPiva.value.trim() != '') {
-            console.log(inputPassword.value);
-            this.parentElement.parentElement.parentElement.submit();
-            errorName.classList.add('d-none');
-            errorEmail.classList.add('d-none');
-            errorPassword.classList.add('d-none');
-            errorAddress.classList.add('d-none');
-            errorPiva.classList.add('d-none');
-            errorTypes.classList.add('d-none');
-        }
-        if (inputName.value.trim() == '') {
-            errorName.classList.remove('d-none');
-        }
-        if (inputName.value.trim() != '') {
-            errorName.classList.add('d-none');
-        }
-        if (inputEmail.value.trim() == '') {
-            errorEmail.classList.remove('d-none');
-        }
-        if (inputEmail.value.trim() != '') {
-            errorEmail.classList.add('d-none');
-        }
-        if (inputPassword.value.trim() == inputPasswordConfirm.value.trim()) {
-            errorPassword.classList.add('d-none');
-        }
-        if (inputPassword.value.trim() != inputPasswordConfirm.value.trim() || inputPassword.value.trim() == '' && inputPasswordConfirm.value.trim() == '') {
-            errorPassword.classList.remove('d-none');
-        }
-        if (inputAddress.value.trim() == '') {
-            errorAddress.classList.remove('d-none');
-        }
-        if (inputAddress.value.trim() != '') {
-            errorAddress.classList.add('d-none');
-        }
-        if (inputPiva.value.trim() == '') {
-            errorPiva.classList.remove('d-none');
-        }
-        if (inputPiva.value.trim() != '') {
-            errorPiva.classList.add('d-none');
-        }
-        if (inputTypes.length == 0) {
-            errorTypes.classList.remove('d-none');
-        }
-        if (inputTypes.length != 0) {
-            errorTypes.classList.add('d-none')
-        }
-    })
-}
+//         // condizionali
+//         if (inputName.value.trim() != ''
+//             && inputEmail.value.trim() != ''
+//             && inputPassword.value.trim() == inputPasswordConfirm.value.trim()
+//             && inputPassword.value.trim() != ''
+//             && inputPasswordConfirm.value.trim() != ''
+//             && inputAddress.value.trim() != ''
+//             && inputPiva.value.trim() != '') {
+//             console.log(inputPassword.value);
+//             this.parentElement.parentElement.parentElement.submit();
+//             errorName.classList.add('d-none');
+//             errorEmail.classList.add('d-none');
+//             errorPassword.classList.add('d-none');
+//             errorAddress.classList.add('d-none');
+//             errorPiva.classList.add('d-none');
+//             errorTypes.classList.add('d-none');
+//         }
+//         if (inputName.value.trim() == '') {
+//             errorName.classList.remove('d-none');
+//         }
+//         if (inputName.value.trim() != '') {
+//             errorName.classList.add('d-none');
+//         }
+//         if (inputEmail.value.trim() == '') {
+//             errorEmail.classList.remove('d-none');
+//         }
+//         if (inputEmail.value.trim() != '') {
+//             errorEmail.classList.add('d-none');
+//         }
+//         if (inputPassword.value.trim() == inputPasswordConfirm.value.trim()) {
+//             errorPassword.classList.add('d-none');
+//         }
+//         if (inputPassword.value.trim() != inputPasswordConfirm.value.trim() || inputPassword.value.trim() == '' && inputPasswordConfirm.value.trim() == '') {
+//             errorPassword.classList.remove('d-none');
+//         }
+//         if (inputAddress.value.trim() == '') {
+//             errorAddress.classList.remove('d-none');
+//         }
+//         if (inputAddress.value.trim() != '') {
+//             errorAddress.classList.add('d-none');
+//         }
+//         if (inputPiva.value.trim() == '') {
+//             errorPiva.classList.remove('d-none');
+//         }
+//         if (inputPiva.value.trim() != '') {
+//             errorPiva.classList.add('d-none');
+//         }
+//         if (inputTypes.length == 0) {
+//             errorTypes.classList.remove('d-none');
+//         }
+//         if (inputTypes.length != 0) {
+//             errorTypes.classList.add('d-none')
+//         }
+//     })
+// }
