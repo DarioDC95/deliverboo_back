@@ -25,7 +25,7 @@
 <body>
     <div id="app">
 
-        <header class="navbar flex-row navbar-expand-md navbar-dark sticky-top bg-dark flex-md-nowrap p-3  shadow">
+        <header class="navbar flex-row navbar-expand-md navbar-dark sticky-top  flex-md-nowrap p-3  shadow" style="background-color:#159895">
             <a class="navbar-brand col-md-3 col-lg-2 me-0" href="/"><img style="width: 10rem" src="{{Vite::asset('resources/img/logo-white.png')}}" alt=""></a>
             <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu">
                 <span class="navbar-toggler-icon"></span>
@@ -57,20 +57,20 @@
         </header>
         <div class="container-fluid vh-100">
             <div class="row h-100">
-                <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark navbar-dark sidebar collapse">
+                <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block navbar-dark sidebar collapse" style="background-color:#159895">
                     <div class="position-sticky pt-3">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                
-                                <a class="nav-link  text-white {{ Route::currentRouteName() == 'admin.restaurants.index' ? 'bg-secondary' : '' }}" href="{{route('admin.restaurants.index')}}">
+
+                                <a class="nav-link  text-white {{ Route::currentRouteName() == 'admin.restaurants.index' ? 'bg-selected' : '' }}" href="{{route('admin.restaurants.index')}}">
                                     <div class="d-flex align-items-center">
                                         <img class="me-2" style="width: 2rem ; filter: invert(1)  " src="{{Vite::asset('resources/img/rist.png')}}" alt="">  <span>Ristorante</span>
                                     </div>
-                                     
+
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.dishes.index' ? 'bg-secondary' : '' }}" href="{{route('admin.dishes.index')}}">
+                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.dishes.index' ? 'bg-selected' : '' }}" href="{{route('admin.dishes.index')}}">
                                     <div class="d-flex align-items-center">
                                         <img class="me-2" style="width: 2rem ; filter: invert(1)  " src="{{Vite::asset('resources/img/dish-icon.jpg')}}" alt="">  <span>Piatti</span>
                                     </div>
