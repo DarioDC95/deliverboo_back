@@ -27,9 +27,7 @@
         <nav class="navbar flex-row navbar-expand-md navbar-dark sticky-top  flex-md-nowrap p-3  shadow" style="background-color:#159895">
             <div class="container d-flex">
                 <a class="navbar-brand col-md-3 col-lg-2 me-0" href="/"><img style="width: 10rem" src="{{Vite::asset('resources/img/logo-white.png')}}" alt=""></a>
-            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
