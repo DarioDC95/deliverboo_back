@@ -124,8 +124,7 @@
                                 @empty
                                     <div class="mb-4">
                                         <div class="d-inline-block alert alert-success">
-                                            Non hai nessun Piatto Inserito, <span
-                                                class="fw-semibold text-primary text-decoration-underline">clicca su
+                                            Non hai nessun Piatto Inserito, clicca su
                                                 aggiungi un Nuovo Piatto</span> per iniziare
                                         </div>
                                     </div>
