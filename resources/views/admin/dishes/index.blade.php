@@ -6,8 +6,9 @@
                 <div class="row my-5">
                     <div class="col-12">
                         <div class="d-flex justify-content-between">
-                            <div>
+                            <div class="d-flex align-items-center">
                                 <h2>Elenco Piatti</h2>
+                                <img class="ms-2" style="width:3rem" src="{{Vite::asset('resources/img/menu.png')}}" alt="">
                             </div>
                             <div>
                                 <a href="{{ route('admin.dishes.create') }}" class="btn btn-primary">Aggiungi un nuovo

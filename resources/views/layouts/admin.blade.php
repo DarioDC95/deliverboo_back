@@ -22,20 +22,26 @@
     @vite(['resources/js/app.js'])
 </head>
 
+<style>
+    @media (min-width: 768px) {
+       .vh-side{height: 100vh;} 
+    }
+</style>
+
 <body>
     <div id="app">
 
         <header class="navbar flex-row navbar-expand-md navbar-dark sticky-top  flex-md-nowrap p-3  shadow" style="background-color:#159895">
             <a class="navbar-brand col-md-3 col-lg-2 me-0" href="/"><img style="width: 10rem" src="{{Vite::asset('resources/img/logo-white.png')}}" alt=""></a>
-            <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu">
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
             {{-- <input class="form-control form-control-dark w-50" type="text" Placeholder="Search"> --}}
-            <div class="collapse navbar-collapse justify-content-end">
+            <div class="collapse navbar-collapse justify-content-lg-end show">
 
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
                         </a>
 
@@ -55,7 +61,7 @@
                 </ul>
             </div>
         </header>
-        <div class="container-fluid vh-100">
+        <div class="container-fluid vh-side">
             <div class="row h-100">
                 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block navbar-dark sidebar collapse" style="background-color:#159895">
                     <div class="position-sticky pt-3">

@@ -16,12 +16,15 @@
                 <h2>Crea il tuo Ristornate</h2>
                 <a class="btn btn-success my-3" href="{{ route('admin.restaurants.create') }}">Aggiungi Ristornate</a>
             @else
-                <h2>Ecco il tuo ristorante</h2>
+            <div class="d-flex">
+                <h2>Benvenuto nel tuo ristorante</h2>
+                <img class="ms-2" style="width:3rem; height:3rem" src="{{Vite::asset('resources/img/index-icon.png')}}" alt=""> 
+            </div>
             <div class="d-flex mt-5">
                 {{-- cover ristorante  --}}
                 <div class="me-5">
                     @if ($restaurant[0]->cover_path != null)
-                    <img class="img-fluid" style="width: 23rem;"
+                    <img class="figure-img img-fluid rounded d-none d-sm-block" style="width: 23rem;"
                     src="{{ asset('storage/' . $restaurant[0]->cover_path) }}"
                     alt="Immagine di copertina del ristorante {{ $restaurant[0]->name }}">
                     @else
