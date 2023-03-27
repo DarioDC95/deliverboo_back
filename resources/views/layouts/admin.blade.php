@@ -64,7 +64,7 @@
 
                                 <a class="nav-link  text-white {{ Route::currentRouteName() == 'admin.restaurants.index' ? 'bg-selected' : '' }}" href="{{route('admin.restaurants.index')}}">
                                     <div class="d-flex align-items-center">
-                                        <img class="me-2" style="width: 2rem ; filter: invert(1)  " src="{{Vite::asset('resources/img/rist.png')}}" alt="">  <span>Ristorante</span>
+                                        <img class="me-2" style="width: 2rem ; filter: invert(1)  " src="{{Vite::asset('resources/img/rist-copia.png')}}" alt="">  <span>Ristorante</span>
                                     </div>
 
                                 </a>

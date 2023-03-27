@@ -43,7 +43,7 @@
                     <span class="fw-bold">Tipologia:</span>
                     <ul class="nav">
                         @foreach ( $restaurant[0]->types as $type )
-                       <li class="badge rounded-pill text-bg-primary mx-2 my-2">{{$type['name']}}</li> 
+                       <li class="badge rounded-pill  mx-2 my-2 fs-5 bg-badges" style="">{{$type['name']}}</li> 
                         @endforeach
                     </ul>
                 </div>
@@ -54,19 +54,19 @@
                 <div class="d-flex">
                     <div class="me-2">
                         {{-- * questa rotta modifica le informazioni --}}
-                        <a class="btn btn-warning btn-square"
+                        <a class="btn btn-warning btn-square  shadow "
                         href="{{ route('admin.restaurants.edit', $restaurant[0]->id) }}"title="Modifica Dettaglio"><i
-                        class="fas fa-edit"></i></a>
+                        class="fas fa-edit"></i>Modifica</a>
                     </div>
 
                      {{-- * questa rotta elimina il ristorante --}}
                     <form action="{{ route('admin.restaurants.destroy', $restaurant[0]->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button class="btn btn-square btn-danger confirm-delete-button" type="submit" title="Elimina"
+                        <button class="btn btn-square btn-danger confirm-delete-button text-black" type="submit" title="Elimina"
                             data-name="{{ $restaurant[0]->name }}" data-bs-toggle="modal"
                             data-restaurant="{{ $restaurant[0]->id }}">
-                            <i class="fas fa-trash"></i>
+                            <i class="fas fa-trash"></i> Elimina
                         </button>
                     </form>
                 </div>
