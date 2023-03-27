@@ -121,30 +121,36 @@
                                 </div>
                             </div>
                         </div> --}}
-                        {{-- <div class="container-select">
-                            <div class="select-btn">
-                                <span class="btn-text">Select Language</span>
-                                <span class="arrow-dwn">
-                                    <i class="fa-solid fa-chevron-down"></i>
-                                </span>
-                            </div>
-                
-                            <ul class="list-items">
-                                @foreach ($types as $type)
-                                <li class="item">
-                                    <input type="checkbox" class="input-checkbox" value="{{$type->id}}" name="types[]">
-                                    <span class="checkbox">
-                                        <i class="fa-solid fa-check check-icon"></i>
-                                    </span>
-                                    <span class="item-text">{{ $type->name }}</span>
-                                </li>
-                                @endforeach
-                                <div id="error-types" class="d-none text-danger">
-                                    Non ci sono tipologie selezionate
-                                </div>
-                            </ul>
-                        </div> --}}
+                        <div class="mb-4 row">
 
+                            <label for="p_iva" class="col-md-4 col-form-label text-md-right">{{ __('P.IVA ') }}</label>
+
+                            <div class="col-md-6">
+
+                                <div class="container-select">
+                                    <div class="select-btn">
+                                        <div class="btn-text">Select Language</div>
+                                        <div class="arrow-dwn">
+                                            <i class="fa-solid fa-chevron-down"></i>
+                                        </div>
+                                    </div>
+                        
+                                    <ul class="list-items">
+                                        @foreach ($types as $type)
+                                        <li class="item">
+                                            <input type="checkbox" class="input-checkbox types-checks" value="{{$type->id}}" name="types[]">
+                                            <div class="checkbox">
+                                                <i class="fa-solid fa-check check-icon"></i>
+                                            </div>
+                                            <div class="item-text">{{ $type->name }}</div>
+                                        </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                                <div id="error-message" style="display: none; color: red;" class="help-block error-help-block">Seleziona almeno una Tipologia</div>
+                            </div>
+                        </div>
+                        
                         {{-- cover ristorante --}}
                         <div class="mb-4 row">
                             <label for="cover_path" class="form-label">Cover del ristorante</label>
