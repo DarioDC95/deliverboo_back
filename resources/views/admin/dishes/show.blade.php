@@ -53,7 +53,7 @@
             </div>
             <div class="row mt-5">
                 <div class="col-12">
-                    <a href="{{ route('admin.dishes.index') }}" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Torna all'elenco</a>
+                    <a href="{{ route('admin.dishes.index') }}" class="btn btn-49ac9f btn-secondary "><i class="fas fa-arrow-left"></i> Torna all'elenco</a>
                 </div>
             </div>
         </div>

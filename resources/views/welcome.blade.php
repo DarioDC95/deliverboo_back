@@ -11,33 +11,35 @@
             </div>
 
             @if (Auth::check())
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="card ">
-                        <a class="text-decoration-none" href="{{ route('register') }}">
-                            <div class="card-header bg-selected text-center text-white h5">
-                                {{ __('Hai effettuato l\'accesso!') }}
-                            </div>
-                        </a>
-                        <div class="card-body text-center">
-                            @if (session('message'))
-                                <div class="alert alert-success" role="alert">
-                                    {{ session('message') }}
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card ">
+                            <a class="text-decoration-none" href="{{ route('register') }}">
+                                <div class="card-header bg-selected text-center text-white h5">
+                                    {{ __('Hai effettuato l\'accesso!') }}
                                 </div>
-                            @endif
-                            {{ __('Inizia a navigare nel tuo pannello di controllo') }}
+                            </a>
+                            <div class="card-body text-center">
+                                @if (session('message'))
+                                    <div class="alert alert-success" role="alert">
+                                        {{ session('message') }}
+                                    </div>
+                                @endif
+                                <a class="text-decoration-none" href="{{ route('register') }}">
+                                    {{ __('Inizia a navigare nel tuo pannello di controllo') }}
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        @else
-            <div class="col-3">
-                <a class="btn btn-square btn-info button-mt-10em position-absolute top-50 start-50 translate-middle text-white"
-                    href="{{ route('register') }}">
-                    Crea un Account
-                </a>
-            </div>
-        @endif
+            @else
+                <div class="col-3">
+                    <a class="btn btn-square btn-info button-mt-10em position-absolute top-50 start-50 translate-middle text-white"
+                        href="{{ route('register') }}">
+                        Crea un Account
+                    </a>
+                </div>
+            @endif
         </div>
     </div>
 
