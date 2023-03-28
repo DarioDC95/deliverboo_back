@@ -69,7 +69,7 @@ class DishController extends Controller
 
         $newDish->save();
 
-        return redirect()->route('admin.dishes.index')->with('message','aggiunto piatto');
+        return redirect()->route('admin.dishes.index')->with('message','Aggiunto piatto');
     }
 
     //! -SHOW-
