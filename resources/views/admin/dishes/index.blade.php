@@ -32,7 +32,7 @@
                 @endif
                 <div class="row">
                     <div class="col-12 table-responsive">
-                        <table class="table table-striped  table-hover">
+                        <table class="table table-striped w-100 table-hover">
                             <thead>
                                 <th>Immagine</th>
                                 <th>Nome</th>
@@ -57,9 +57,9 @@
                                             @endif
                                         </td>
                                         <td>{{ $dish['name'] }}</td>
-                                        <td>{{ $dish['ingredients'] }}</td>
-                                        <td>{{ $dish['price'] }} €</td>
-                                        <td>{{ $dish['description'] }}</td>
+                                        <td class="text-break">{{ $dish['ingredients'] }}</td>
+                                        <td class="text-nowrap">{{ $dish['price'] }} €</td>
+                                        <td class="text-break">{{ $dish['description'] }}</td>
                                         <td>
                                             @if ($dish['visible'])
                                                 <div class="grid-item"><i class="fa-solid fa-check"
