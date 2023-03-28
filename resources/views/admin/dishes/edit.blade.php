@@ -41,8 +41,8 @@
             <div class="col-5">
                 <label class="control-label my-2 fw-semibold">Visibile</label>
                 <select class="form-control" name="visible" id="visible">
-                    <option value="0" {{old('visible') === 0 ? "selected" : "" }}>NO</option>
-                    <option value="1" {{old('visible') === 1 ? "selected" : "" }}>SI</option>
+                    <option value="0" >No</option>
+                    <option value="1" selected >Si</option>
                 </select>
             </div>
 
@@ -51,8 +51,8 @@
                 <label class="control-label my-2 fw-semibold">Vegano</label>
                 <select class="form-control" name="vegan" id="visible">
                     <option value="" disable selected>Inserisci un opzione</option>
-                    <option value="0"  {{old('visible') === 0 ? "selected" : "" }}>NO</option>
-                    <option value="1" {{old('visible') === 1 ? "selected" : "" }}>SI</option>
+                    <option value="0">No</option>
+                    <option value="1">Si</option>
                 </select>
             </div>
 
@@ -61,8 +61,8 @@
                 <label class="control-label my-2 fw-semibold">Vegetariano</label>
                 <select class="form-control" name="vegetarian" id="visible">
                     <option value="" disable selected>Inserisci un opzione</option>
-                    <option value="0">NO</option>
-                    <option value="1">SI</option>
+                    <option value="0">No</option>
+                    <option value="1">Si</option>
                 </select>
             </div>
 
