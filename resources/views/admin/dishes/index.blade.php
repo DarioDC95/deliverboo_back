@@ -8,13 +8,15 @@
                         <div class="d-flex justify-content-between">
                             <div class="d-flex align-items-center">
                                 <h2>Elenco Piatti</h2>
-                                <img class="ms-2" style="width:3rem" src="{{Vite::asset('resources/img/menu.png')}}" alt="">
+                                <img class="ms-2" style="width:3rem" src="{{ Vite::asset('resources/img/menu.png') }}"
+                                    alt="">
                             </div>
                             <div class="d-none d-md-block">
                                 <a href="{{ route('admin.dishes.create') }}" class="btn btn-primary">Aggiungi un Piatto</a>
                             </div>
                             <div class="d-sm-block d-md-none ">
-                                <a href="{{ route('admin.dishes.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i></a>
+                                <a href="{{ route('admin.dishes.create') }}" class="btn btn-primary"><i
+                                        class="fa fa-plus"></i></a>
                             </div>
                         </div>
                     </div>
@@ -74,9 +76,10 @@
                                                 <p>Non è Disponibile</p>
                                             @elseif ($dish['vegan'] == true)
                                                 <div class="grid-item"><i class="fa-solid fa-check"
-                                                    style="color: #008000;"></i></div>
+                                                        style="color: #008000;"></i></div>
                                             @elseif ($dish['vegan'] == false)
-                                                <div class="grid-item"><i class="fa-solid fa-x" style="color: #ff0000;"></i></div>
+                                                <div class="grid-item"><i class="fa-solid fa-x" style="color: #ff0000;"></i>
+                                                </div>
                                             @endif
                                         </td>
 
@@ -88,7 +91,8 @@
                                                 <div class="grid-item"><i class="fa-solid fa-check"
                                                         style="color: #008000;"></i></div>
                                             @elseif ($dish['vegetarian'] == false)
-                                                <div class="grid-item"><i class="fa-solid fa-x" style="color: #ff0000;"></i></div>
+                                                <div class="grid-item"><i class="fa-solid fa-x" style="color: #ff0000;"></i>
+                                                </div>
                                             @endif
                                         </td>
 
@@ -114,7 +118,8 @@
                                                     @csrf
                                                     @method('DELETE')
 
-                                                    <button class="btn btn-square btn-danger confirm-delete-button text-black"
+                                                    <button
+                                                        class="btn btn-square btn-danger confirm-delete-button text-black"
                                                         type="submit" title="Elimina" data-name="{{ $dish->name }}"
                                                         data-bs-toggle="modal">
                                                         <i class="fas fa-trash"></i>
@@ -128,7 +133,7 @@
                                     <div class="mb-4">
                                         <div class="d-inline-block alert alert-success">
                                             Non hai nessun Piatto Inserito, clicca su
-                                                aggiungi un Nuovo Piatto per iniziare
+                                            aggiungi un Nuovo Piatto per iniziare
                                         </div>
                                     </div>
                                 @endforelse
