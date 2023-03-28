@@ -24,7 +24,7 @@
 
 <style>
     @media (min-width: 768px) {
-       .vh-side{height: 100vh;} 
+       .vh-side{height: 100vh;}
     }
 </style>
 
@@ -64,7 +64,7 @@
         <div class="container-fluid vh-side">
             <div class="row h-100">
                 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block navbar-dark sidebar collapse" style="background-color:#159895">
-                    <div class="position-sticky pt-3">
+                    <div class="position-sticky py-3">
                         <ul class="nav flex-column">
                             <li class="nav-item">
 
