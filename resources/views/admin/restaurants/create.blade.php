@@ -15,7 +15,7 @@
                 {{-- * PARTITA IVA --}}
                 <div class="form-group my-2">
                     <label class="fs-2 fw-semibold" for="p_iva">P.IVA</label>
-                    <input type="text" class="form-control" name="p_iva" id="p_iva" placeholder="Inserisci P.IVA">
+                    <input type="text" minlength="11" maxlength="11" class="form-control" name="p_iva" id="p_iva" placeholder="Inserisci P.IVA">
                 </div>
 
                 {{-- * INDIRIZZO --}}

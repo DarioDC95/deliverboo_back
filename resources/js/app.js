@@ -45,6 +45,15 @@ const selectBtn = document.querySelector(".select-btn"),
 
 if(selectBtn != null) {
 
+    let checked = document.querySelectorAll(".checked"),
+        btnText = document.querySelector(".btn-text");
+
+        if(checked && checked.length > 0){
+            btnText.innerText = `${checked.length} Selected`;
+        }else{
+            btnText.innerText = "Seleziona Tipologia";
+        }
+
     selectBtn.addEventListener("click", () => {
         selectBtn.classList.toggle("open");
     });

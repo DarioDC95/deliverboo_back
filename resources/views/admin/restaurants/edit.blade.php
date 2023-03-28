@@ -16,7 +16,7 @@
                 
                 <div class="form-group my-2">
                     <label class="fs-2 fw-semibold" for="p_iva">Modifica P.IVA</label>
-                    <input type="text" class="form-control" name="p_iva" id="p_iva" placeholder="Inserisci P.IVA" value="{{old('p_iva') ?? $restaurant->p_iva }}">
+                    <input type="text" class="form-control" minlength="11" maxlength="11" name="p_iva" id="p_iva" placeholder="Inserisci P.IVA" value="{{old('p_iva') ?? $restaurant->p_iva }}">
                 </div>
                 <div class="form-group my-2">
                     <label class="fs-2 fw-semibold" for="address">Modifica Indirizzo</label>
@@ -39,8 +39,8 @@
                 
                             <ul class="list-items">
                                 @foreach ($types as $type)
-                                <li class="item">
-                                    <input type="checkbox" class="input-checkbox types-checks" value="{{$type->id}}" name="types[]">
+                                <li class="item {{ $restaurant->types->contains($type) ? 'checked' : '' }}">
+                                    <input type="checkbox" class="input-checkbox types-checks" class=`` value="{{$type->id}}" name="types[]" {{ $restaurant->types->contains($type) ? 'checked' : '' }}>
                                     <div class="checkbox">
                                         <i class="fa-solid fa-check check-icon"></i>
                                     </div>
