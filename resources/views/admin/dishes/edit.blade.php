@@ -10,39 +10,41 @@
                 @endforeach
             @endif
         </div>
-        <form method="POST" action="{{ route('admin.dishes.update' , $dish->id) }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('admin.dishes.update', $dish->id) }}" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
             {{-- * NOME PIATTO --}}
             <div class="form-group my-2">
                 <label class="fs-3 fw-semibold" for="name">Nome Piatto</label>
-                <input type="text" class="form-control" name="name" id="name" placeholder="Inserire Nome Piatto" value="{{old('name') ?? $dish->name}}">
+                <input type="text" class="form-control" name="name" id="name" placeholder="Inserire Nome Piatto"
+                    value="{{ old('name') ?? $dish->name }}">
             </div>
 
             {{-- * PREZZO PIATTO --}}
             <div class="form-group my-2">
                 <label class="fs-3 fw-semibold" for="name">Prezzo Piatto</label>
-                <input type="number" step=".01" class="form-control" name="price" id="price" placeholder="Inserire Prezzo Piatto" value="{{old('price') ?? $dish->price}}">
+                <input type="number" step=".01" class="form-control" name="price" id="price"
+                    placeholder="Inserire Prezzo Piatto" value="{{ old('price') ?? $dish->price }}">
             </div>
 
             {{-- * INGREDIENTI --}}
             <div class="form-group my-2">
                 <label class="fs-3 fw-semibold" for="name">Ingredienti</label>
-                <textarea class="form-control" name="ingredients" id="ingredients" placeholder="Inserire Ingredienti" >{{old('ingredients') ?? $dish->ingredients}} </textarea>
+                <textarea class="form-control" name="ingredients" id="ingredients" placeholder="Inserire Ingredienti">{{ old('ingredients') ?? $dish->ingredients }} </textarea>
             </div>
 
             <div class="form-group my-2">
                 <label class="fs-3 fw-semibold" for="name">Descrizione</label>
-                <textarea class="form-control" name="description" id="description" placeholder="Inserire Descrizione">{{old('description') ?? $dish->description}}</textarea>
+                <textarea class="form-control" name="description" id="description" placeholder="Inserire Descrizione">{{ old('description') ?? $dish->description }}</textarea>
             </div>
 
             {{-- * VISIBILITA' --}}
             <div class="col-5">
                 <label class="control-label my-2 fw-semibold">Visibile</label>
                 <select class="form-control" name="visible" id="visible">
-                    <option value="0" >No</option>
-                    <option value="1" selected >Si</option>
+                    <option value="0">No</option>
+                    <option value="1" selected>Si</option>
                 </select>
             </div>
 
@@ -68,7 +70,8 @@
 
             {{-- * IMMAGINE --}}
             <div class="my-2">
-                <img class="img-fluid w-15" style="width: 18rem;" src="{{ asset('storage/' . $dish->image_path) }}" alt="Immagine di copertina del ristorante {{ $dish->name }}"><br>
+                <img class="img-fluid w-15" style="width: 18rem;" src="{{ asset('storage/' . $dish->image_path) }}"
+                    alt="Immagine di copertina del ristorante {{ $dish->name }}"><br>
                 <em>Immagine attuale</em>
             </div>
             <div class="mb-3">
@@ -80,12 +83,12 @@
         </form>
     </div>
 
-<!-- Javascript Requirements -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <!-- Javascript Requirements -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
-<!-- Laravel Javascript Validation -->
-<script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
+    <!-- Laravel Javascript Validation -->
+    <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js') }}"></script>
 
-{!! JsValidator::formRequest('App\Http\Requests\UpdateDishRequest') !!}
+    {!! JsValidator::formRequest('App\Http\Requests\UpdateDishRequest') !!}
 @endsection
