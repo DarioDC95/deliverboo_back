@@ -29,7 +29,7 @@ class StoreDishRequest extends FormRequest
             'ingredients' => ['required', 'max:65535'],
             'image_path' => ['required', 'max:65535'],
             'price' => ['required','between:0,99.99', 'decimal:0,2'],
-            'visible' => ['required', 'boolean'],
+            'visible' => ['nullable', 'boolean'],
             'vegetarian' => ['nullable', 'boolean'],
             'vegan' => ['nullable', 'boolean'],
         ];
@@ -50,8 +50,7 @@ class StoreDishRequest extends FormRequest
             'image_path.max' => 'Il path dell\'immagine non è valido',
             'price.required' => 'Il prezzo è obbligatorio',
             'price.decimal' => 'Il prezzo deve avere al massimo :decimal numeri',
-            'visible.required' => 'Visibilità richiesta',
-
+           
         ];
     }
 }
