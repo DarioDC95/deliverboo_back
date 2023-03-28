@@ -1,5 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
 
+/* selettore said-bar */
 .bg-selected {
     background-color: #49ac9f;
     border: 1px solid #44a094;
@@ -9,8 +10,18 @@
     background-color: #002B5B;
 }
 
+/* show.blade (Torna all'elenco->) */
+.btn-49ac9f:hover{
+    background-color: #159895;
+}
 
+/* welcome.blade (Crea un Account)*/
+.button-mt-10em {
+    margin-top: -10em;
+    text-decoration: none;
+}
 
+/* select type */
 form {
 
     span {
