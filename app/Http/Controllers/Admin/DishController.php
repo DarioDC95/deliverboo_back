@@ -64,6 +64,19 @@ class DishController extends Controller
             $form_data['image_path'] = $img_cover;
         }
 
+        
+        if(!isset($request->visible)){
+            $form_data['visible'] = 0;
+        }
+
+        if(!isset($request->vegetarian)){
+            $form_data['vegetarian'] = 0;
+        }
+
+        if(!isset($request->vegan)){
+            $form_data['vegan'] = 0;
+        }
+
         $newDish = New Dish();
         $newDish->fill($form_data);
 
@@ -122,6 +135,18 @@ class DishController extends Controller
             }
             $img_cover = Storage::disk('public')->put('image_path', $request->image_path);
             $form_data['image_path'] = $img_cover;
+        }
+
+        if(!isset($request->visible)){
+            $form_data['visible'] = 0;
+        }
+        
+        if(!isset($request->vegetarian)){
+            $form_data['vegetarian'] = 0;
+        }
+
+        if(!isset($request->vegan)){
+            $form_data['vegan'] = 0;
         }
 
         // dd($form_data);

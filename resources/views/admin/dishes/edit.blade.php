@@ -41,31 +41,35 @@
 
             {{-- * VISIBILITA' --}}
             <div class="col-5">
-                <label class="control-label my-2 fw-semibold">Visibile</label>
-                <select class="form-control" name="visible" id="visible">
-                    <option value="0">No</option>
-                    <option value="1" selected>Si</option>
-                </select>
+                <label class="fs-3 control-label my-2 fw-semibold">Visibile</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="1" name="visible" id="visible"  {{ $dish->visible ? 'checked' : '' }}>
+                    <label class="form-check-label" for="visible">
+                      Si
+                    </label>
+                  </div>
             </div>
 
             {{-- * VEGANO' --}}
             <div class="col-5">
-                <label class="control-label my-2 fw-semibold">Vegano</label>
-                <select class="form-control" name="vegan" id="visible">
-                    <option value="" disable selected>Inserisci un opzione</option>
-                    <option value="0">No</option>
-                    <option value="1">Si</option>
-                </select>
+                <label class="fs-3 control-label my-2 fw-semibold">Vegetariano</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="1" name="vegetarian" id="vegetarian" {{ $dish->vegetarian ? 'checked' : '' }}>
+                    <label class="form-check-label" for="vegetarian">
+                      Si
+                    </label>
+                  </div>
             </div>
 
             {{-- * VEGETARIANO' --}}
             <div class="col-5">
-                <label class="control-label my-2 fw-semibold">Vegetariano</label>
-                <select class="form-control" name="vegetarian" id="visible">
-                    <option value="" disable selected>Inserisci un opzione</option>
-                    <option value="0">No</option>
-                    <option value="1">Si</option>
-                </select>
+                <label class="fs-3 control-label my-2 fw-semibold">Vegano</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="1" name="vegan" id="vegan"  {{ $dish->vegan ? 'checked' : '' }}>
+                    <label class="form-check-label" for="vegan">
+                      Si
+                    </label>
+                  </div>
             </div>
 
             {{-- * IMMAGINE --}}
