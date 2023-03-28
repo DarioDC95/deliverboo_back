@@ -33,8 +33,8 @@
                     </div>
                 </div>
             @else
-                <div class="col-3 text-center">
-                    <a class="btn btn-square btn-info button-mt-10em translate-middle text-white"
+                <div class="col-3">
+                    <a class="btn btn-square btn-info button-mt-10em position-absolute top-50 start-50 translate-middle text-white"
                         href="{{ route('register') }}">
                         Crea un Account
                     </a>
