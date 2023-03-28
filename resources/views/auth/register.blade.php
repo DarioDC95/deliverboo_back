@@ -94,7 +94,7 @@
 
                             <div class="col-md-6">
                                 <input id="p_iva" type="text" class="form-control" name="p_iva" value="" required
-                                minlength="11" maxlength="20" >
+                                minlength="11" maxlength="11" >
                                 <div id="error-p_iva" class="d-none text-danger">
                                     Devi inserire una Partita Iva
                                 </div>

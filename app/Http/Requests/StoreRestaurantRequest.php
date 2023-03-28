@@ -24,7 +24,7 @@ class StoreRestaurantRequest extends FormRequest
     public function rules()
     {
         return [
-            'p_iva' => ['required', 'max:20'],
+            'p_iva' => ['required', 'numeric', 'digits:11'],
             'cover_path' => ['nullable', 'max:65535'],
             'address' => ['required', 'max:255'],
             'types' => ['nullable', 'exists:types,id'],
@@ -40,7 +40,8 @@ class StoreRestaurantRequest extends FormRequest
     {
         return [
             'p_iva.required' => 'la P.Iva è obbligatoria',
-            'p_iva.max' => 'La P.Iva deve avere al massimo :max caratteri',
+            'p_iva.numeric' => 'La P.Iva deve essere composta da valori numerici',
+            'p_iva.digits' => 'La P.Iva deve essere lunga esattamente 11 caratteri',
             'cover_path.required' => 'l\'immagine è obbligatoria',
             'cover_path.max' => 'Il path dell\'immagine non è valido',
             'address.required' => 'L\'indirizzo è obbligatorio',

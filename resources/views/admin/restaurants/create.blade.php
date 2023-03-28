@@ -16,48 +16,43 @@
                     {{-- * PARTITA IVA --}}
                     <div class="form-group my-2">
                         <label class="fs-2 fw-semibold" for="p_iva">P.IVA</label>
-                        <input type="text" class="form-control" name="p_iva" id="p_iva"
-                            placeholder="Inserisci P.IVA">
+                        <input type="text" minlength="11" maxlength="11" class="form-control" name="p_iva" id="p_iva" placeholder="Inserisci P.IVA">
                     </div>
 
                     {{-- * INDIRIZZO --}}
                     <div class="form-group my-2">
                         <label class="fs-2 fw-semibold" for="address">Indirizzo</label>
-                        <input type="text" class="form-control" name="address" id="address"
-                            placeholder="Inserisci Indirizzo">
+                        <input type="text" class="form-control" name="address" id="address" placeholder="Inserisci Indirizzo">
                     </div>
 
                     {{-- * CATEGORIA --}}
                     <div class="form-group my-2">
 
-                        <label for="types" class="fs-2 fw-semibold">{{ __('Tipologia ') }}</label>
+                    <label for="types" class="fs-2 fw-semibold">{{ __('Tipologia ') }}</label>
 
-                        <div>
+                    <div>
 
-                            <div class="container-select">
-                                <div class="select-btn">
-                                    <div class="btn-text">Seleziona Tipologia</div>
-                                    <div class="arrow-dwn">
-                                        <i class="fa-solid fa-chevron-down"></i>
-                                    </div>
+                        <div class="container-select">
+                            <div class="select-btn">
+                                <div class="btn-text">Seleziona Tipologia</div>
+                                <div class="arrow-dwn">
+                                    <i class="fa-solid fa-chevron-down"></i>
                                 </div>
-
-                                <ul class="list-items">
-                                    @foreach ($types as $type)
-                                        <li class="item">
-                                            <input type="checkbox" class="input-checkbox types-checks"
-                                                value="{{ $type->id }}" name="types[]">
-                                            <div class="checkbox">
-                                                <i class="fa-solid fa-check check-icon"></i>
-                                            </div>
-                                            <div class="item-text">{{ $type->name }}</div>
-                                        </li>
-                                    @endforeach
-                                </ul>
                             </div>
-                            <div id="error-message" style="display: none; color: red;" class="help-block error-help-block">
-                                Seleziona almeno una Tipologia</div>
+                
+                            <ul class="list-items">
+                                @foreach ($types as $type)
+                                <li class="item">
+                                    <input type="checkbox" class="input-checkbox types-checks" value="{{$type->id}}" name="types[]">
+                                    <div class="checkbox">
+                                        <i class="fa-solid fa-check check-icon"></i>
+                                    </div>
+                                    <div class="item-text">{{ $type->name }}</div>
+                                </li>
+                                @endforeach
+                            </ul>
                         </div>
+                        <div id="error-message" style="display: none; color: red;" class="help-block error-help-block">Seleziona almeno una Tipologia</div>
                     </div>
 
                     {{-- * IMMAGINE --}}
