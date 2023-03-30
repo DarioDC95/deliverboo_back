@@ -469,7 +469,7 @@ return [
     ],
     // greco
     [
-        'restaurant_id' => 7,
+        'restaurant_id' => 8,
         'name' => 'Moussaka',
         'description' => 'Moussaka è un piatto tipico greco a base di melanzane, carne macinata e bechamel.',
         'ingredients' => 'melanzane, carne macinata, patate, pomodoro, cipolle, aglio, olio d\'oliva, pangrattato, parmigiano, latte, farina, burro',
@@ -480,7 +480,7 @@ return [
         'image_path' => '',
     ],
     [
-        'restaurant_id' => 7,
+        'restaurant_id' => 8,
         'name' => 'Souvlaki',
         'description' => 'Souvlaki è una tipica specialità greca a base di carne marinata e grigliata, servita su uno spiedino.',
         'ingredients' => 'carne di maiale o pollo, olio d\'oliva, aceto di vino bianco, aglio, origano, limone, sale, pepe',
@@ -491,7 +491,7 @@ return [
         'image_path' => '',
     ],
     [
-        'restaurant_id' => 7,
+        'restaurant_id' => 8,
         'name' => 'Tzatziki',
         'description' => 'Tzatziki è una salsa a base di yogurt, cetrioli e aglio, tipica della cucina greca.',
         'ingredients' => 'yogurt, cetrioli, aglio, olio d\'oliva, sale',
@@ -502,7 +502,7 @@ return [
         'image_path' => '',
     ],
     [
-        'restaurant_id' => 7,
+        'restaurant_id' => 8,
         'name' => 'Spanakopita',
         'description' => 'Spanakopita è un piatto greco a base di spinaci e formaggio feta, avvolto in una sfoglia di pasta fillo.',
         'ingredients' => 'spinaci, feta, uova, cipolle, aglio, erbe aromatiche, olio d\'oliva, pasta fillo',
@@ -513,7 +513,7 @@ return [
         'image_path' => '',
     ],
     [
-        'restaurant_id' => 7,
+        'restaurant_id' => 8,
         'name' => 'Dolmades',
         'description' => 'Dolmades sono involtini di foglie di vite ripieni di riso e spezie, tipici della cucina greca.',
         'ingredients' => 'foglie di vite, riso, cipolle, aglio, prezzemolo, menta, succo di limone, olio d\'oliva',
@@ -524,7 +524,7 @@ return [
         'image_path' => '',
     ],
     [
-        'restaurant_id' => 7,
+        'restaurant_id' => 8,
         'name' => 'Horiatiki',
         'description' => 'Horiatiki è una tipica insalata greca a base di pomodori, cetrioli, cipolle, peperoni, olive e formaggio feta.',
         'ingredients' => 'pomodori, cetrioli, cipolle, peperoni, olive, formaggio feta, origano, sale, pepe, olio d\'oliva',
@@ -535,7 +535,7 @@ return [
         'image_path' => '',
     ],
     [
-        'restaurant_id' => 7,
+        'restaurant_id' => 8,
         'name' => 'Saganaki',
         'description' => 'Saganaki è un piatto greco a base di formaggio feta o kefalotyri fuso e fritto in padella.',
         'ingredients' => 'formaggio feta o kefalotyri, olio d\'oliva, limone',
@@ -546,7 +546,7 @@ return [
         'image_path' => '',
     ],
     [
-        'restaurant_id' => 7,
+        'restaurant_id' => 8,
         'name' => 'Kolokithokeftedes',
         'description' => 'Kolokithokeftedes sono polpette di zucchine grattugiate, formaggio feta e spezie, tipiche della cucina greca.',
         'ingredients' => 'zucchine, formaggio feta, uova, pangrattato, cipolle, aglio, erbe aromatiche, sale, pepe, olio d\'oliva',
@@ -557,7 +557,7 @@ return [
         'image_path' => '',
     ],
     [
-        'restaurant_id' => 7,
+        'restaurant_id' => 8,
         'name' => 'Gyros',
         'description' => 'Gyros è un piatto greco a base di carne di maiale marinata e arrostita, servita in un panino con verdure e salsa tzatziki.',
         'ingredients' => 'carne di maiale, olio d\'oliva, aglio, origano, peperoncino, verdure miste, pane pita, tzatziki',
@@ -568,7 +568,7 @@ return [
         'image_path' => '',
     ],
     [
-        'restaurant_id' => 7,
+        'restaurant_id' => 8,
         'name' => 'Fava',
         'description' => 'Fava è una crema di fagioli gialli servita come antipasto o contorno, tipica della cucina greca.',
         'ingredients' => 'fagioli gialli, cipolle, aglio, limone, olio d\'oliva, origano',
