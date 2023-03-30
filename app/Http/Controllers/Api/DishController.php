@@ -10,7 +10,7 @@ class DishController extends Controller
 {
     public function index($id) {
 
-        $dishes = Dish::with('restaurant')->where('restaurant_id', $id)->get();
+        $dishes = Dish::with('restaurant', 'restaurant.user')->where('restaurant_id', $id)->get();
 
         if($dishes) {
             return response()->json([
