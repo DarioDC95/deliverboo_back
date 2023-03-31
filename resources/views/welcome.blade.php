@@ -40,6 +40,12 @@
                     </a>
                 </div>
             @endif
+            <div class="col-12 d-flex justify-content-center align-items-center mt-5">
+                <a class="btn btn-square btn-info text-white"
+                    href="{{ url('http://localhost:5173/') }}">
+                    Torna alla Home
+                </a>
+            </div>
         </div>
     </div>
 
