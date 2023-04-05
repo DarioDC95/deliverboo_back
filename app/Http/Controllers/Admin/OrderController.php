@@ -6,6 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Models\Order;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+use App\Models\Dish;
+use App\Models\Restaurant;
 
 class OrderController extends Controller
 {
@@ -16,7 +20,9 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $user = Auth::user();
+        $orders = Order::all();
+        return view('admin.order.index', compact('orders'));
     }
 
     /**
