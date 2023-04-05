@@ -26,7 +26,7 @@ class OrderController extends Controller
             'shopping_cart.*.*.dish.restaurant.p_iva' => 'exists:restaurants,p_iva'
         ]);
 
-        foreach ($request->input('shopping_cart') as $key1 => $value1) {
+        foreach ($form_data['shopping_cart'] as $key1 => $value1) {
             foreach ($value1 as $key2 => $value2) {
                 $validator->sometimes("shopping_cart.$key1.$key2.dish.price", Rule::exists('dishes', 'price')->where(function ($query) use ($value2) {
                     $query->where('id', $value2['dish']['id']);
@@ -36,14 +36,17 @@ class OrderController extends Controller
             }
         }
 
-        
-
         if($validator->fails()){  
             return response()->json([
                 'success' => false,
                 'errors' => $validator->errors()
             ]);
         }
+
+        foreach ($form_data['shopping_cart'] as $key => $value) {
+            // code
+        }
+
         // $newOrder = new Order(); 
         // $newOrder->fill($form_data);
         // $newOrder->save();
