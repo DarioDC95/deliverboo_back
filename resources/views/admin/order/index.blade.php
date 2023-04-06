@@ -34,6 +34,7 @@
                     <th>Telefono</th>
                     <th>Indirizzo</th>
                     <th>Totale</th>
+                    <th>Orario</th>
                     <th>Consegnato</th>
                     <th>Dettagli </th>
                 </thead>
@@ -46,6 +47,7 @@
                         <td>{{$order['phone_client']}}</td>
                         <td>{{$order['address_client']}}</td>
                         <td>{{$order['total_price']}}&#8364;</td>
+                        <td>{{$order['created_at']}}</td>
                         <td>
                             <form method="POST" action="{{ route('admin.order.update', $order->id) }}" >
                                 @csrf
