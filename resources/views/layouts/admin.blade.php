@@ -89,6 +89,13 @@
                                     </div>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.chart.index' ? 'bg-selected' : '' }}" href="{{route('admin.chart.index')}}">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fa-solid fa-chart-line me-3"></i>  <span>Stats.Ordini</span>
+                                    </div>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </nav>

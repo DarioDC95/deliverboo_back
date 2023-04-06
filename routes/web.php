@@ -1,10 +1,11 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\DishController;
 use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\ChartJSController;
 use App\Http\Controllers\Admin\RestaurantController;
-use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,7 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(
     Route::resource('/restaurants', RestaurantController::class);
     Route::resource('/dishes', DishController::class);
     Route::resource('/order', OrderController::class);
+    Route::resource('chart', ChartJSController::class);
 });
 
 Route::middleware('auth')->group(function () {
