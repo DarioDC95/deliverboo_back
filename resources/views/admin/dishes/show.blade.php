@@ -19,9 +19,14 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <img class="img-fluid w-15 mb-3" style="width: 100%; max-width: 350px;"
-                            src="{{ asset('storage/' . $dish->image_path) }}"
-                            alt="Immagine di copertina del ristorante {{ $dish->name }}">
+                        @if ($dish->image_path != null)
+                            <img class="img-fluid w-15 mb-3" style="width: 100%; max-width: 350px;"
+                                src="{{ asset('storage/' . $dish->image_path) }}"
+                                alt="Immagine di copertina del ristorante {{ $dish->name }}">
+                        @else
+                            <img src="{{Vite::asset('resources/img/logo-blue.png')}} " style="width: 20rem" >
+                        @endif
+
                     </div>
                     <div class="col-md-6">
                         <h4>Ingredienti:</h4>

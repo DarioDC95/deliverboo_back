@@ -53,7 +53,7 @@
                                                     src="{{ asset('storage/' . $dish->image_path) }}"
                                                     alt="Immagine di copertina del piatto {{ $dish->name }}">
                                             @else
-                                                <h2>Immagine non disponibile</h2>
+                                                <img src="{{Vite::asset('resources/img/logo-blue.png')}} " style="width: 10rem" >
                                             @endif
                                         </td>
                                         <td>{{ $dish['name'] }}</td>
