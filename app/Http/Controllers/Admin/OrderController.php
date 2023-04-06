@@ -56,7 +56,7 @@ class OrderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Order $order)
-    {   
+    {
         // $order->dishes;
         // dd($order->dishes);
         return view('admin.order.show', compact('order'));
@@ -82,7 +82,9 @@ class OrderController extends Controller
      */
     public function update(UpdateOrderRequest $request, Order $order)
     {
-        //
+        $form_data['delivered'] = !$order->delivered;
+        $order->update($form_data);
+        return redirect()->route('admin.order.index');
     }
 
     /**
