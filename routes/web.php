@@ -1,5 +1,7 @@
 <?php
+
 use App\Http\Controllers\Admin\DishController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\RestaurantController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +24,7 @@ Route::get('/', function () {
 Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(function () {
     Route::resource('/restaurants', RestaurantController::class);
     Route::resource('/dishes', DishController::class);
+    Route::resource('/order', OrderController::class);
 });
 
 Route::middleware('auth')->group(function () {

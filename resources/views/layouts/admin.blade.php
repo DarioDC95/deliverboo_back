@@ -82,6 +82,13 @@
                                     </div>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.order.index' ? 'bg-selected' : '' }}" href="{{route('admin.order.index')}}">
+                                    <div class="d-flex align-items-center">
+                                        <img class="me-2" style="width: 2rem ; filter: invert(1)  " src="{{Vite::asset('resources/img/orders.png')}}" alt="">  <span>Ordini</span>
+                                    </div>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </nav>
