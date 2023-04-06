@@ -13,14 +13,17 @@ class NewOrderForCustomer extends Mailable
 {
     use Queueable, SerializesModels;
 
+    // DEFINIAMO LA VARIABILE D'ISTANZA IN CUI SI MEMORIZZANO I DATI INSERITI DAGLI UTENTI
+    public $lead;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($_lead)
     {
-        //
+        $this->lead = $_lead;
     }
 
     /**
@@ -31,7 +34,7 @@ class NewOrderForCustomer extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'New Order For Customer',
+            subject: 'Riepilogo del tuo ordine da Deliveboo',
         );
     }
 
@@ -43,7 +46,7 @@ class NewOrderForCustomer extends Mailable
     public function content()
     {
         return new Content(
-            view: 'view.name',
+            view: 'mail.new_order_customer_mail',
         );
     }
 
