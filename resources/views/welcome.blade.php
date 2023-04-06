@@ -1,5 +1,10 @@
 {{-- Home --}}
 @extends('layouts.app')
+
+{{-- Bg-animato --}}
+
+
+
 @section('content')
     <div class="container">
         <div class="row flex-column justify-content-center">
@@ -48,6 +53,6 @@
             </div>
         </div>
     </div>
-
+</div>
 @endsection
 
