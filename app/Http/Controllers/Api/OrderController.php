@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Mail\NewOrder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
@@ -61,13 +62,23 @@ class OrderController extends Controller
             });
         
             $newOrder->dishes()->attach($dishes);
+
+            $form_mail = array(
+                               'name_client' => $form_data['name_client'],
+                               'surname_client' => $form_data['surname_client'],
+                               'email_client' => $form_data['email_client'],
+                               'phone_client' => $form_data['phone_client'],
+                               'address_client' => $form_data['address_client'],
+                               'dishes' => $value
+                              );
+
+            Mail::to($form_mail['dishes'][0]['dish']['restaurant']['user']['email'])->send(new NewOrder($form_mail));
         }
 
-        // Mail::to('info@boolpres.com')->send(new Order());
 
         return response()->json([
             'success' => true,
-            'result' => $dishes
+            'result' => $form_mail
         ]);
     }
 
