@@ -4,10 +4,11 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Mail\NewOrder;
+use App\Mail\NewOrderForCustomer;
+use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
-use App\Models\Order;
 use Illuminate\Validation\Rule;
 
 class OrderController extends Controller
@@ -73,8 +74,12 @@ class OrderController extends Controller
                                'order_id' => $newOrder->id
                               );
 
+            // mail al ristoratore
             Mail::to($form_mail['dishes'][0]['dish']['restaurant']['user']['email'])->send(new NewOrder($form_mail));
         }
+
+        // mail al cliente
+        Mail::to($form_data['email_client'])->send(new NewOrderForCustomer($form_data['shopping_cart']));
 
         return response()->json([
             'success' => true,
