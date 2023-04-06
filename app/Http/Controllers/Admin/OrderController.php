@@ -56,9 +56,10 @@ class OrderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Order $order)
-    {
-        $dish = Dish::all();
-        return view('admin.order.show', compact('dish'));
+    {   
+        // $order->dishes;
+        // dd($order->dishes);
+        return view('admin.order.show', compact('order'));
     }
 
     /**
