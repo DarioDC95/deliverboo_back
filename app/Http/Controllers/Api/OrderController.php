@@ -69,12 +69,12 @@ class OrderController extends Controller
                                'email_client' => $form_data['email_client'],
                                'phone_client' => $form_data['phone_client'],
                                'address_client' => $form_data['address_client'],
-                               'dishes' => $value
+                               'dishes' => $value,
+                               'order_id' => $newOrder->id
                               );
 
             Mail::to($form_mail['dishes'][0]['dish']['restaurant']['user']['email'])->send(new NewOrder($form_mail));
         }
-
 
         return response()->json([
             'success' => true,
