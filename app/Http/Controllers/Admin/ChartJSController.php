@@ -13,9 +13,9 @@ class ChartJSController extends Controller
 {
     public function index()
     {
-        $order = Order::select(DB::raw("total_price as price"), DB::raw("created_at as month_name"))
+        $order = Order::select(DB::raw("total_price as price"), DB::raw("DAY(created_at) as month_name"))
                     ->whereYear('created_at', date('Y'))
-                    // ->groupBy(DB::raw("month_name"))
+                    ->groupBy(DB::raw("month_name"), DB::raw("id"))
                     ->orderBy('id','ASC')
                     ->pluck('price', 'month_name');
  
