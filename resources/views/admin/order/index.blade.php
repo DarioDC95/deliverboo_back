@@ -37,7 +37,21 @@
                         <td>{{$order['phone_client']}}</td>
                         <td>{{$order['address_client']}}</td>
                         <td>{{$order['total_price']}}</td>
-                        <td>{{$order['delivered']}}</td>
+                        <td>
+                            <form method="POST" action="{{ route('admin.order.update', $order->id) }}" >
+                                @csrf
+                                @method('PUT')
+                                @if ($order['delivered']== 1)
+                                    <div>
+                                        <button type="submit"  class="btn btn-success"><i class="fa-solid fa-check"></i></button>
+                                    </div>
+                                @else
+                                    <div>
+                                        <button type="submit"  class="btn btn-danger"><i class="fa-solid fa-xmark"></i></button>
+                                    </div>
+                                @endif
+                            </form>
+                        </td>
                         <td><div>
                             <a href="{{ route('admin.order.show', $order->id) }}"
                                 class="btn btn-primary text-black"><i class="fas fa-eye"></i></a>
