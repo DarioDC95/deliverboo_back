@@ -11,7 +11,7 @@ class Order extends Model
 
     protected $fillable = ['restaurant_id', 'name_client', 'surname_client', 'email_client', 'phone_client', 'address_client', 'total_price', 'delivered'];
 
-    public function resturant() {
+    public function restaurant() {
         return $this->belongsTo(Restaurant::class);
     }
 

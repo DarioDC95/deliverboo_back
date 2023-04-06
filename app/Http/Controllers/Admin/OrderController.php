@@ -57,9 +57,14 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        // $order->dishes;
-        // dd($order->dishes);
-        return view('admin.order.show', compact('order'));
+        $user = Auth::user();
+
+        if ($order->restaurant->user->id != $user->id) {
+            return redirect()->route('admin.order.index')->with('message', 'Devi accedere con il profilo relazionato all\'ordine');
+        }
+        else {
+            return view('admin.order.show', compact('order'));
+        }
     }
 
     /**

@@ -3,7 +3,7 @@
 
 @section('content')
 <div class="container my-5">
-    <div class="row">
+    <div class="row mb-5">
         <div class="col-12">
             <div class="d-flex justify-content-between">
                 <div class="d-flex align-items-center">
@@ -14,6 +14,15 @@
             </div>
         </div>
     </div>
+    @if (session('message'))
+    <div class="row mb-4">
+        <div class="col-4">
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        </div>
+    </div>
+    @endif
     <div class="row">
         <div class="col-12 table-responsive">
             <table class="table table-striped w-100 table-hover">
