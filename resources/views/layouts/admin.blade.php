@@ -92,7 +92,7 @@
                             <li class="nav-item">
                                 <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.chart.index' ? 'bg-selected' : '' }}" href="{{route('admin.chart.index')}}">
                                     <div class="d-flex align-items-center">
-                                        <i class="fa-solid fa-chart-line me-3"></i>  <span>Stats.Ordini</span>
+                                        <img class="me-2" style="width: 2rem ; filter: invert(1)  " src="{{Vite::asset('resources/img/grafico.png')}}" alt="">  <span>Stats.Ordini</span>
                                     </div>
                                 </a>
                             </li>
