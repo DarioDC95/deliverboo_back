@@ -21,8 +21,11 @@ class OrderController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $orders = Order::all();
+        $restaurant = Restaurant::where('user_id', $user->id)->get();
+        $orders = Order::where('restaurant_id', $restaurant[0]->id)->get();
+        $orders = $user->restaurant->orders;
         return view('admin.order.index', compact('orders'));
+        // dd($orders);
     }
 
     /**
@@ -54,7 +57,8 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        //
+        $dish = Dish::all();
+        return view('admin.order.show', compact('dish'));
     }
 
     /**
