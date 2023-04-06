@@ -36,18 +36,18 @@
                         <td>{{$order['email_client']}}</td>
                         <td>{{$order['phone_client']}}</td>
                         <td>{{$order['address_client']}}</td>
-                        <td>{{$order['total_price']}}</td>
+                        <td>{{$order['total_price']}}&#8364;</td>
                         <td>
                             <form method="POST" action="{{ route('admin.order.update', $order->id) }}" >
                                 @csrf
                                 @method('PUT')
                                 @if ($order['delivered']== 1)
                                     <div>
-                                        <button type="submit"  class="btn btn-success"><i class="fa-solid fa-check"></i></button>
+                                        <button type="submit"  class="btn  btn-success"><i class="fa-solid fa-check fa-xs"></i></button>
                                     </div>
                                 @else
                                     <div>
-                                        <button type="submit"  class="btn btn-danger"><i class="fa-solid fa-xmark"></i></button>
+                                        <button type="submit"  class="btn  btn-danger"><i class="fa-solid fa-xmark"></i></button>
                                     </div>
                                 @endif
                             </form>
