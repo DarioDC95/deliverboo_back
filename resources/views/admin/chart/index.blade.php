@@ -21,7 +21,7 @@
     };
   
     const config = {
-        type: 'line',
+        type: 'bar',
         data: data,
         options: {}
     };
