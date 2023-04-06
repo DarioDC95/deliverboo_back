@@ -14,4 +14,4 @@
     <p>{{ $item['dish']['name'] }}</p>
 @endforeach
 
-<a href="{{ url('http://127.0.0.1:8000/admin/order/' . $item['order_id']) }}">link al piatto</a>
+<a href="{{ url('http://127.0.0.1:8000/admin/order/' . $lead['order_id']) }}">link al piatto</a>
