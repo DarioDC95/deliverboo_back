@@ -3,7 +3,7 @@
 
 {{-- Bg-animato --}}
 
-{{-- <div class="container">
+<div class="container">
 
     <body id="body">
         <div>
@@ -13,7 +13,7 @@
         </div>
     </body>
 
-</div> --}}
+</div>
 
 @section('content')
     <div class="container">
