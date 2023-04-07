@@ -1,365 +1,76 @@
 @import '~bootstrap/scss/bootstrap';
 
-
 /* Bg-animato (welcome.blade.php) */
 
 body {
-    margin: 0;
-    height: 100vh;
-    font-weight: 100;
-    background: radial-gradient(#a23982,#1f1013);
-    -webkit-overflow-Y: hidden;
-    -moz-overflow-Y: hidden;
-    -o-overflow-Y: hidden;
-    overflow-y: hidden;
-    -webkit-animation: fadeIn 1 1s ease-out;
-    -moz-animation: fadeIn 1 1s ease-out;
-    -o-animation: fadeIn 1 1s ease-out;
-    animation: fadeIn 1 1s ease-out;
-}
-
-button{
-  position: absolute;
-  border: 2px solid white;
-  background: transparent;
-  font-family: 'Roboto', sans-serif;
-  color: white;
-  width: 250px;
-  height: 50px;
-  font-size: 2em;
-  border-radius: 5px;
-  opacity: .5;
-  top: 60vh;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  margin: auto;
-  transition: .3s;
-}
-
-button:hover{
-  border: 2px solid #104F55;
-  background-color: rgba(365,365,365,0.5);
-  cursor: pointer;
-  color: #104F55;
-  opacity: .8;
-  transition: .3s;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-.light {
-    position: absolute;
-    width: 0px;
-    opacity: .75;
-    background-color: white;
-    box-shadow: #e9f1f1 0px 0px 20px 2px;
-    opacity: 0;
-    top: 100vh;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
     margin: auto;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: auto;
+    background: linear-gradient(315deg, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgb(10, 131, 218) 98%);
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
 }
 
-.x1{
-  -webkit-animation: floatUp 4s infinite linear;
-  -moz-animation: floatUp 4s infinite linear;
-  -o-animation: floatUp 4s infinite linear;
-  animation: floatUp 4s infinite linear;
-   -webkit-transform: scale(1.0);
-   -moz-transform: scale(1.0);
-   -o-transform: scale(1.0);
-  transform: scale(1.0);
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
 }
 
-.x2{
-  -webkit-animation: floatUp 7s infinite linear;
-  -moz-animation: floatUp 7s infinite linear;
-  -o-animation: floatUp 7s infinite linear;
-  animation: floatUp 7s infinite linear;
-  -webkit-transform: scale(1.6);
-  -moz-transform: scale(1.6);
-  -o-transform: scale(1.6);
-  transform: scale(1.6);
-  left: 15%;
+.wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 40s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
 }
 
-.x3{
-  -webkit-animation: floatUp 2.5s infinite linear;
-  -moz-animation: floatUp 2.5s infinite linear;
-  -o-animation: floatUp 2.5s infinite linear;
-  animation: floatUp 2.5s infinite linear;
-  -webkit-transform: scale(.5);
-  -moz-transform: scale(.5);
-  -o-transform: scale(.5);
-  transform: scale(.5);
-  left: -15%;
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 30s linear reverse infinite;
+    opacity: 0.8;
 }
 
-.x4{
-  -webkit-animation: floatUp 4.5s infinite linear;
-  -moz-animation: floatUp 4.5s infinite linear;
-  -o-animation: floatUp 4.5s infinite linear;
-  animation: floatUp 4.5s infinite linear;
-  -webkit-transform: scale(1.2);
-  -moz-transform: scale(1.2);
-  -o-transform: scale(1.2);
-  transform: scale(1.2);
-  left: -34%;
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 40s -1s reverse infinite;
+    opacity: 0.9;
 }
 
-.x5{
-  -webkit-animation: floatUp 8s infinite linear;
-  -moz-animation: floatUp 8s infinite linear;
-  -o-animation: floatUp 8s infinite linear;
-  animation: floatUp 8s infinite linear;
-  -webkit-transform: scale(2.2);
-  -moz-transform: scale(2.2);
-  -o-transform: scale(2.2);
-  transform: scale(2.2);
-  left: -57%;
-}
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
 
-.x6{
-  -webkit-animation: floatUp 3s infinite linear;
-  -moz-animation: floatUp 3s infinite linear;
-  -o-animation: floatUp 3s infinite linear;
-  animation: floatUp 3s infinite linear;
-  -webkit-transform: scale(.8);
-  -moz-transform: scale(.8);
-  -o-transform: scale(.8);
-  transform: scale(.8);
-  left: -81%;
-}
+    25% {
+        transform: translateX(-25%);
+    }
 
-.x7{
-  -webkit-animation: floatUp 5.3s infinite linear;
-  -moz-animation: floatUp 5.3s infinite linear;
-  -o-animation: floatUp 5.3s infinite linear;
-  animation: floatUp 5.3s infinite linear;
-  -webkit-transform: scale(3.2);
-  -moz-transform: scale(3.2);
-  -o-transform: scale(3.2);
-  transform: scale(3.2);
-  left: 37%;
-}
+    50% {
+        transform: translateX(-50%);
+    }
 
-.x8{
-  -webkit-animation: floatUp 4.7s infinite linear;
-  -moz-animation: floatUp 4.7s infinite linear;
-  -o-animation: floatUp 4.7s infinite linear;
-  animation: floatUp 4.7s infinite linear;
-  -webkit-transform: scale(1.7);
-  -moz-transform: scale(1.7);
-  -o-transform: scale(1.7);
-  transform: scale(1.7);
-  left: 62%;
-}
+    75% {
+        transform: translateX(-25%);
+    }
 
-.x9{
-  -webkit-animation: floatUp 4.1s infinite linear;
-  -moz-animation: floatUp 4.1s infinite linear;
-  -o-animation: floatUp 4.1s infinite linear;
-  animation: floatUp 4.1s infinite linear;
-  -webkit-transform: scale(0.9);
-  -moz-transform: scale(0.9);
-  -o-transform: scale(0.9);
-  transform: scale(0.9);
-  left: 85%;
+    100% {
+        transform: translateX(1);
+    }
 }
-
-button:focus{
-  outline: none;
-}
-
-@-webkit-keyframes floatUp{
-  0%{top: 100vh; opacity: 0;}
-  25%{opacity: 1;}
-  50%{top: 0vh; opacity: .8;}
-  75%{opacity: 1;}
-  100%{top: -100vh; opacity: 0;}
-}
-@-moz-keyframes floatUp{
-  0%{top: 100vh; opacity: 0;}
-  25%{opacity: 1;}
-  50%{top: 0vh; opacity: .8;}
-  75%{opacity: 1;}
-  100%{top: -100vh; opacity: 0;}
-}
-@-o-keyframes floatUp{
-  0%{top: 100vh; opacity: 0;}
-  25%{opacity: 1;}
-  50%{top: 0vh; opacity: .8;}
-  75%{opacity: 1;}
-  100%{top: -100vh; opacity: 0;}
-}
-@keyframes floatUp{
-  0%{top: 100vh; opacity: 0;}
-  25%{opacity: 1;}
-  50%{top: 0vh; opacity: .8;}
-  75%{opacity: 1;}
-  100%{top: -100vh; opacity: 0;}
-}
-
-.header{
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: 'Roboto', sans-serif;
-  font-weight: 200;
-  color: white;
-  font-size: 2em;
-}
-
-#head1, #head2,#head3, #head4, #head5{
-  opacity: 0;
-}
-
-#head1{
-  -webkit-animation: fadeOut 1 5s ease-in;
-  -moz-animation: fadeOut 1 5s ease-in;
-  -o-animation: fadeOut 1 5s ease-in;
-  animation: fadeOut 1 5s ease-in;
-}
-
-#head2{
-  -webkit-animation: fadeOut 1 5s ease-in;
-  -moz-animation: fadeOut 1 5s ease-in;
-  -o-animation: fadeOut 1 5s ease-in;
-  animation: fadeOut 1 5s ease-in;
-  -webkit-animation-delay: 6s;
-  -moz-animation-delay: 6s;
-  -o-animation-delay: 6s;
-  animation-delay: 6s;
-}
-
-#head3{
-  -webkit-animation: fadeOut 1 5s ease-in;
-  -moz-animation: fadeOut 1 5s ease-in;
-  -o-animation: fadeOut 1 5s ease-in;
-  animation: fadeOut 1 5s ease-in;
-  -webkit-animation-delay: 12s;
-  -moz-animation-delay: 12s;
-  -o-animation-delay: 12s;
-  animation-delay: 12s;
-}
-
-#head4{
-  -webkit-animation: fadeOut 1 5s ease-in;
-  -moz-animation: fadeOut 1 5s ease-in;
-  -o-animation: fadeOut 1 5s ease-in;
-  animation: fadeOut 1 5s ease-in;
-  -webkit-animation-delay: 17s;
-  -moz-animation-delay: 17s;
-  -o-animation-delay: 17s;
-  animation-delay: 17s;
-}
-
-#head5{
-  -webkit-animation: finalFade 1 5s ease-in;
-  -moz-animation: finalFade 1 5s ease-in;
-  -o-animation: finalFade 1 5s ease-in;
-  animation: finalFade 1 5s ease-in;
-  -webkit-animation-fill-mode: forwards;
-  -moz-animation-fill-mode: forwards;
-  -o-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-  -webkit-animation-delay: 22s;
-  -moz-animation-delay: 22s;
-  -o-animation-delay: 22s;
-  animation-delay: 22s;
-}
-
-@-webkit-keyframes fadeIn{
-  from{opacity: 0;}
-  to{opacity: 1;}
-}
-
-@-moz-keyframes fadeIn{
-  from{opacity: 0;}
-  to{opacity: 1;}
-}
-
-@-o-keyframes fadeIn{
-  from{opacity: 0;}
-  to{opacity: 1;}
-}
-
-@keyframes fadeIn{
-  from{opacity: 0;}
-  to{opacity: 1;}
-}
-
-@-webkit-keyframes fadeOut{
-  0%{opacity: 0;}
-  30%{opacity: 1;}
-  80%{opacity: .9;}
-  100%{opacity: 0;}
-}
-
-@-moz-keyframes fadeOut{
-  0%{opacity: 0;}
-  30%{opacity: 1;}
-  80%{opacity: .9;}
-  100%{opacity: 0;}
-}
-
-@-o-keyframes fadeOut{
-  0%{opacity: 0;}
-  30%{opacity: 1;}
-  80%{opacity: .9;}
-  100%{opacity: 0;}
-}
-
-@keyframes fadeOut{
-  0%{opacity: 0;}
-  30%{opacity: 1;}
-  80%{opacity: .9;}
-  100%{opacity: 0;}
-}
-
-@-webkit-keyframes finalFade{
-  0%{opacity: 0;}
-  30%{opacity: 1;}
-  80%{opacity: .9;}
-  100%{opacity: 1;}
-}
-
-@-moz-keyframes finalFade{
-  0%{opacity: 0;}
-  30%{opacity: 1;}
-  80%{opacity: .9;}
-  100%{opacity: 1;}
-}
-
-@-o-keyframes finalFade{
-  0%{opacity: 0;}
-  30%{opacity: 1;}
-  80%{opacity: .9;}
-  100%{opacity: 1;}
-}
-
-@keyframes finalFade{
-  0%{opacity: 0;}
-  30%{opacity: 1;}
-  80%{opacity: .9;}
-  100%{opacity: 1;}
-}
-
-#footer{
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.2em;
-  color: white;
-  position: fixed;
-  -webkit-transform: translate(95vw,90vh);
-  -moz-transform: translate(95vw,90vh);
-  transform: translate(95vw,90vh);
-  transform: translate(95vw,90vh);
-}
-
-
-
 
 
 /* selettore said-bar */
@@ -373,7 +84,7 @@ button:focus{
 }
 
 /* show.blade (Torna all'elenco->) */
-.btn-49ac9f:hover{
+.btn-49ac9f:hover {
     background-color: #159895;
 }
 
@@ -384,7 +95,7 @@ form {
         color: red;
     }
 
-    .container-select{
+    .container-select {
         position: relative;
         max-width: 320px;
         width: 100%;
@@ -394,7 +105,7 @@ form {
             opacity: 0;
         }
 
-        .select-btn{
+        .select-btn {
             display: flex;
             height: 50px;
             align-items: center;
@@ -405,12 +116,14 @@ form {
             background-color: #fff;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
         }
-        .select-btn .btn-text{
+
+        .select-btn .btn-text {
             font-size: 17px;
             font-weight: 400;
             color: #333;
         }
-        .select-btn .arrow-dwn{
+
+        .select-btn .arrow-dwn {
             display: flex;
             height: 21px;
             width: 21px;
@@ -422,10 +135,12 @@ form {
             justify-content: center;
             transition: 0.3s;
         }
-        .select-btn.open .arrow-dwn{
+
+        .select-btn.open .arrow-dwn {
             transform: rotate(-180deg);
         }
-        .list-items{
+
+        .list-items {
             position: relative;
             margin-top: 0px;
             border-radius: 8px;
@@ -436,13 +151,15 @@ form {
             overflow-y: hidden;
             transition: 1s all;
         }
-        .select-btn.open ~ .list-items{
+
+        .select-btn.open~.list-items {
             margin-top: 15px;
             height: 250px;
             padding: 16px;
             overflow-y: auto;
         }
-        .list-items .item{
+
+        .list-items .item {
             display: flex;
             align-items: center;
             list-style: none;
@@ -453,15 +170,18 @@ form {
             border-radius: 8px;
             position: relative;
         }
-        .list-items .item:hover{
+
+        .list-items .item:hover {
             background-color: #e7edfe;
         }
-        .item .item-text{
+
+        .item .item-text {
             font-size: 16px;
             font-weight: 400;
             color: #333;
         }
-        .item .input-checkbox{
+
+        .item .input-checkbox {
             position: absolute;
             left: 0;
             z-index: 1;
@@ -470,7 +190,8 @@ form {
             height: 100%;
             width: 100%;
         }
-        .item .checkbox{
+
+        .item .checkbox {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -482,23 +203,26 @@ form {
             transition: all 0.3s ease-in-out;
             margin-left: 20px;
         }
+
         /* verifico se è :checked l'input */
-        .item .input-checkbox:checked ~ .checkbox{
+        .item .input-checkbox:checked~.checkbox {
             background-color: #4070f4;
             border-color: #4070f4;
-            box-shadow: 0px 0px 5px 2px #4070f4 ;
+            box-shadow: 0px 0px 5px 2px #4070f4;
         }
+
         /* .item.checked .checkbox{
             background-color: #4070f4;
             border-color: #4070f4;
         } */
-        .checkbox .check-icon{
+        .checkbox .check-icon {
             color: #fff;
             font-size: 11px;
             transform: scale(0);
             transition: all 0.2s ease-in-out;
         }
-        .item.checked .check-icon{
+
+        .item.checked .check-icon {
             transform: scale(1);
         }
     }
