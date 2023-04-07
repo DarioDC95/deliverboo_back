@@ -1,5 +1,78 @@
 @import '~bootstrap/scss/bootstrap';
 
+/* Bg-animato (welcome.blade.php) */
+
+/* #body {
+    margin: auto;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: auto;
+    background: linear-gradient(315deg, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgb(10, 131, 218) 98%);
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 40s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 30s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 40s -1s reverse infinite;
+    opacity: 0.9;
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(1);
+    }
+} */
+
+
 /* selettore said-bar */
 .bg-selected {
     background-color: #49ac9f;
@@ -11,7 +84,7 @@
 }
 
 /* show.blade (Torna all'elenco->) */
-.btn-49ac9f:hover{
+.btn-49ac9f:hover {
     background-color: #159895;
 }
 
@@ -22,7 +95,7 @@ form {
         color: red;
     }
 
-    .container-select{
+    .container-select {
         position: relative;
         max-width: 320px;
         width: 100%;
@@ -32,7 +105,7 @@ form {
             opacity: 0;
         }
 
-        .select-btn{
+        .select-btn {
             display: flex;
             height: 50px;
             align-items: center;
@@ -43,12 +116,14 @@ form {
             background-color: #fff;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
         }
-        .select-btn .btn-text{
+
+        .select-btn .btn-text {
             font-size: 17px;
             font-weight: 400;
             color: #333;
         }
-        .select-btn .arrow-dwn{
+
+        .select-btn .arrow-dwn {
             display: flex;
             height: 21px;
             width: 21px;
@@ -60,10 +135,12 @@ form {
             justify-content: center;
             transition: 0.3s;
         }
-        .select-btn.open .arrow-dwn{
+
+        .select-btn.open .arrow-dwn {
             transform: rotate(-180deg);
         }
-        .list-items{
+
+        .list-items {
             position: relative;
             margin-top: 0px;
             border-radius: 8px;
@@ -74,13 +151,15 @@ form {
             overflow-y: hidden;
             transition: 1s all;
         }
-        .select-btn.open ~ .list-items{
+
+        .select-btn.open~.list-items {
             margin-top: 15px;
             height: 250px;
             padding: 16px;
             overflow-y: auto;
         }
-        .list-items .item{
+
+        .list-items .item {
             display: flex;
             align-items: center;
             list-style: none;
@@ -91,15 +170,18 @@ form {
             border-radius: 8px;
             position: relative;
         }
-        .list-items .item:hover{
+
+        .list-items .item:hover {
             background-color: #e7edfe;
         }
-        .item .item-text{
+
+        .item .item-text {
             font-size: 16px;
             font-weight: 400;
             color: #333;
         }
-        .item .input-checkbox{
+
+        .item .input-checkbox {
             position: absolute;
             left: 0;
             z-index: 1;
@@ -108,7 +190,8 @@ form {
             height: 100%;
             width: 100%;
         }
-        .item .checkbox{
+
+        .item .checkbox {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -120,23 +203,26 @@ form {
             transition: all 0.3s ease-in-out;
             margin-left: 20px;
         }
+
         /* verifico se è :checked l'input */
-        .item .input-checkbox:checked ~ .checkbox{
+        .item .input-checkbox:checked~.checkbox {
             background-color: #4070f4;
             border-color: #4070f4;
-            box-shadow: 0px 0px 5px 2px #4070f4 ;
+            box-shadow: 0px 0px 5px 2px #4070f4;
         }
+
         /* .item.checked .checkbox{
             background-color: #4070f4;
             border-color: #4070f4;
         } */
-        .checkbox .check-icon{
+        .checkbox .check-icon {
             color: #fff;
             font-size: 11px;
             transform: scale(0);
             transition: all 0.2s ease-in-out;
         }
-        .item.checked .check-icon{
+
+        .item.checked .check-icon {
             transform: scale(1);
         }
     }

@@ -16,7 +16,7 @@
     </div>
     @if (session('message'))
     <div class="row mb-4">
-        <div class="col-4">
+        <div class="col-12 col-lg-4">
             <div class="alert alert-success">
                 {{ session('message') }}
             </div>
