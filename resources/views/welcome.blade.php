@@ -2,7 +2,18 @@
 @extends('layouts.app')
 
 {{-- Bg-animato --}}
-@include('home_welcome')
+
+<{{-- div class="container">
+
+    <body id="body">
+        <div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+        </div>
+    </body>
+
+</> --}}
 
 @section('content')
     <div class="container">
