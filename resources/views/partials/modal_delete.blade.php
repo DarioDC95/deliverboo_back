@@ -7,7 +7,10 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                Sei sicuro di voler cancellare l'elemento selezionato: <span id="modal-name"></span>
+                Sei sicuro di voler cancellare l'elemento selezionato:
+
+                 <span class="fw-bold" id="modal-name"></span>
+                 <div>Eliminerai tutti i dati collegati a questo elemento</div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>

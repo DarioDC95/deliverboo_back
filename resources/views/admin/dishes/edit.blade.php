@@ -74,9 +74,13 @@
 
             {{-- * IMMAGINE --}}
             <div class="my-2">
-                <img class="img-fluid w-15" style="width: 18rem;" src="{{ asset('storage/' . $dish->image_path) }}"
-                    alt="Immagine di copertina del ristorante {{ $dish->name }}"><br>
-                <em>Immagine attuale</em>
+                @if ($dish->image_path != null)
+                <img class="img-fluid " style="width: 10rem;"
+                    src="{{ asset('storage/' . $dish->image_path) }}"
+                    alt="Immagine di copertina del piatto {{ $dish->name }}">
+            @else
+                <img src="{{Vite::asset('resources/img/logo-blue.png')}}" class="mt-2" style="width: 10rem" >
+            @endif
             </div>
             <div class="mb-3">
                 <label for="image_path" class="form-label my-2 fw-bold">Immagine del piatto</label>
